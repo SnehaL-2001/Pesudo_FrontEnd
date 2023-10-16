@@ -1,0 +1,40 @@
+<app-adminnavbar></app-adminnavbar>
+<div class="container">
+  
+    <div>
+      <h1 class="text-center">Plan List</h1>
+      
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Plan Name</th>
+            <th>Plan Price</th>
+            <th>Data (GB)</th>
+            <th>Messages/Day</th>
+            <th>Validity</th>
+            <th>Features</th>
+            <th>Category</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let plan of plans">
+            <td>{{ plan.name }}</td>
+            <td>{{ plan.planPrice }}</td>
+            <td>{{ plan.data }}</td>
+            <td>{{ plan.messagesPerDay }}</td>
+            <td>{{ plan.validity }}</td>
+            <td>{{ plan.features }}</td>
+            <td>{{ plan.category }}</td>
+            <td>
+              <button class="btn btn-success" (click)="editPlan(plan.id)">Edit</button>
+              <button class="btn btn-danger" (click)="deletePlan(plan.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="add-plan-button">
+        <button class="btn btn-dark" style="color: rgb(255, 255, 255);background-color: black;" (click)="navigateToCreatePlan()">Add Plan</button>
+      </div>
+    </div>
+  </div>

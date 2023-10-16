@@ -1,0 +1,120 @@
+.hello{
+  
+  display: flex;
+
+  align-items: center;
+  margin-bottom: 15px;
+}
+.app-pricingcard {
+  flex: 0 0 calc(33.33% - 10px); /* Adjust the percentage as needed; 10px is the gap between cards */
+  margin-bottom: 20px;
+   /* Add some margin for spacing between cards */
+  /* You can set a max-width or other styling for each pricing card */
+}
+.pricing-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  
+  justify-content: space-between; /* or any other justification you prefer */
+}
+input[type=text]{
+  
+  position: relative;
+  padding: 12px 40px 12px 20px;
+  width: 20px;
+  color: #000000;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  width: 125px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+   background: linear-gradient(to right, #353535 0%,#464747 #2b2b2b 100%);
+   transition: width 0.4s ease;
+  outline: none; 
+  
+  &:focus{ width: 300px; }
+} 
+
+select{
+  float: right;
+  
+  margin-right: 25px;
+    position: relative;
+    padding: 12px 40px 12px 20px;
+    width: 25px;
+    color: #000000;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    width: 125px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+     background: linear-gradient(to right, #353535 0%,#464747 #2b2b2b 100%);
+     transition: width 0.4s ease;
+    outline: none; 
+    
+    &:focus{ width: 300px; }
+  
+}
+
+i{
+  position: relative;
+  left: -37px;
+  color: #c30505;
+}
+
+
+
+
+
+
+.pricing-area {
+  margin-top: 50px; 
+  /* Add margin to move the content lower */
+}
+.pricing-area::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 1px,
+      #ff00005b 1px,
+      #ff000000 2px
+    );
+    background-size: 100% 20px;
+    animation: backgroundAnimation 2s linear infinite;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.3;
+  }
+  
+  /* Add the additional neon glow lines */
+ 
+  
+  @keyframes backgroundAnimation {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  /* Add a keyframe animation for the neon glow effect */
+  @keyframes neonGlowAnimation {
+    0% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }

@@ -1,0 +1,44 @@
+.nav-link.active{
+    background-color: rgb(207, 0, 0);
+    border-radius: 5px;
+    display: flex;
+    color: #ffffff;
+}
+.dropdown-menu-custom {
+    background-color: white; /* Replace with your desired background color */
+}
+
+/* Change the text color of the dropdown items */
+.dropdown-menu-custom .dropdown-item {
+    color:red; /* Replace with your desired text color */
+}
+.dropdown-menu-custom .dropdown-item.active {
+    background-color: black; /* Replace with your desired selected item background color */
+    color: white; /* Replace with your desired selected item text color */
+}
+/* Style for "Pro" text */
+.pro-text {
+    color: white;
+    font-weight: bold;
+}
+
+/* Style for "WaveX" text */
+.wave-text {
+    color: white;
+    font-weight: bold;
+}
+.x-text {
+    color: rgb(255, 6, 6);
+   font-weight: bold;
+}
+
+
+/* Adjust the padding for the logo to control spacing */
+.navbar-brand {
+    padding-right: 10px;
+}
+
+/* Add margin-right to the navbar links for spacing */
+.nav-link {
+    margin-right: 15px; /* Adjust the value as needed to control the spacing */
+}

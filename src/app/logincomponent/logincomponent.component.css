@@ -1,0 +1,148 @@
+/* login.component.css */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+
+:root {
+    --pink: #ff0077;
+    --purple: #600b81;
+    --gradient: linear-gradient(var(--pink), var(--purple));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: "Chakra Petch", sans-serif;
+}
+
+.container1 {
+    display: flex;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+   
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    min-height: 100vh;
+    background: url("https://img.freepik.com/premium-photo/3d-illustration-4k-uhd-abstract-background-dark-endless-tunnel-shape-triangle-with-red-yellow-neon-lights_129677-1597.jpg?w=1060");
+    background-size: cover;
+    background-position: center;
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+}
+
+
+.center {
+    
+    margin: auto;
+    border-radius: 5px;
+    padding: 55px 45px 55px 45px;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.746);
+    box-shadow: -1px 4px 28px 0px rgba(200, 166, 193, 0.486);
+}
+
+.center h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+/* In a CSS stylesheet or style tag */
+.red-text {
+    color: red;
+}
+
+.input-field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.input-field label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.input-field input {
+    padding: 10px 10px 10px 50px;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgb(239, 229, 229); /* You can change the color as needed */
+        outline: none;
+        color: #fff;
+        transition: border-bottom ease 0.3s; /* Add a transition to the bottom border only */
+    }
+
+
+
+.input-field input:focus {
+    border: 1px solid #fff;
+}
+
+.input-field i.fas {
+    position: absolute;
+    top: 13px;
+    left: 16px;
+    color: var(--pink);
+}
+
+.input-field button {
+    padding: 8px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid red;
+    box-sizing: border-box;
+    box-shadow: 0px px 5px 0px #ffa600;
+    outline: none;
+    cursor: pointer;
+    color: #151515;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+p {
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 450px) {
+    .center {
+        width: 90%;
+    }
+}
+
+@media (max-width: 320px) {
+    .center {
+        width: 90%;
+        padding: 25px 35px 25px 35px;
+    }
+
+    .input-field input::placeholder {
+        font-size: 12px;
+    }
+}
+.glowing-text {
+    text-align: center;
+    color: rgb(204, 2, 2);
+    font-size: 18px; /* Adjust the font size as needed */
+    animation: glow 1s infinite alternate; /* Apply the glow animation */
+  }
+  
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Adjust the shadow color and size */
+    }
+    100% {
+      text-shadow: 0 0 20px rgba(255, 66, 66, 0.8); /* Adjust the shadow color and size */
+    }
+  }
+  

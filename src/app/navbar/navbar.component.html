@@ -1,0 +1,68 @@
+<!-- <nav style="background-color: blueviolet;" class="navbar navbar-expand-lg navbar navbar-dark ">
+    <div  class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+     
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login" routerLinkActive="active" target="_top">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/register" routerLinkActive="active" target="_top">Register New Sim</a>
+          </li>
+          
+          </ul>
+    </div>
+    </nav>
+   -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <!-- Make the logo image smaller -->
+            <img src="https://career-portal.prodapt.com/wp-content/uploads/2022/01/Prodapt-icon-logo.png" alt="Logo" height="24">
+            <!-- Add the text "ProWaveX" with individual styling for "Pro" and "WaveX" -->
+            <span class="logo-text">
+                <span class="pro-text">Pro</span><span class="wave-text">Wave</span><span class="x-text" style="color: brown;">X</span>
+            </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link" routerLink="/home" routerLinkActive="active" id="homeDropdown" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                    Home
+                </a>
+                <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="homeDropdown">
+                    <li><a class="dropdown-item" routerLink="/home" routerLinkActive="active">Home</a></li>
+                    <li><a class="dropdown-item" href="#stats-section">Section</a></li>
+                    <li><a class="dropdown-item" href="#about">About Us</a></li>
+                    <li><a class="dropdown-item" href="#footer">Contact Us</a></li>
+                    <!-- Add more dropdown items for Home as needed -->
+                </ul>
+            </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login" routerLinkActive="active" target="_top">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/register" routerLinkActive="active" target="_top">Register New Sim</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<router-outlet></router-outlet>
+          
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <li><a class="nav-link" routerLink="/login" routerLinkActive="active" target="_top">Login</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li> -->
+          

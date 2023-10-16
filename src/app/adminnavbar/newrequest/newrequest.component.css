@@ -1,0 +1,19 @@
+.table-centered {
+    margin: 0 auto; /* Center the table horizontally */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a box shadow to the table */
+  }
+  
+  .table-bordered {
+    border: 1px solid #000;
+  }
+  
+  .even-row {
+    background-color: black; /* Black background for even rows */
+    color: rgb(184, 184, 184); /* White text for even rows */
+  }
+  
+  .odd-row {
+    background-color: #000; /* Darker shade of black for odd rows */
+    color: white; /* White text for odd rows */
+  }
+  

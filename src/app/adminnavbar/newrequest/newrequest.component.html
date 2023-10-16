@@ -1,0 +1,31 @@
+
+<app-adminnavbar></app-adminnavbar>
+
+<div class="container mt-5">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="text-danger">First Name</th>
+        <th class="text-danger">Last Name</th>
+        <th class="text-danger">Date of Birth</th>
+        <th class="text-danger">Email Address</th>
+        <th class="text-danger">Address</th>
+        <th class="text-danger">Location</th>
+        <th class="text-danger">Login Password</th>
+        <th class="text-danger">Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.dob | date: 'yyyy-MM-dd' }}</td>
+        <td>{{ user.emailAddress }}</td>
+        <td>{{ user.address }}</td>
+        <td>{{ user.location }}</td>
+        <td>{{ user.loginPassword }}</td>
+        <td>{{ user.phoneNumber }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

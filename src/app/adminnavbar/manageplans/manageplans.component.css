@@ -1,0 +1,49 @@
+body {
+    background-color: #f5f5f5;
+  }
+
+  .container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  .table tr:nth-child(odd) {
+    background-color: #e6e6e6;
+  }
+
+  .table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .table th {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  .add-plan-button {
+    position: sticky;
+    top: 0;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .add-plan-button button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+  }
+
+  .add-plan-button button:hover {
+    background-color: #0056b3;
+  }

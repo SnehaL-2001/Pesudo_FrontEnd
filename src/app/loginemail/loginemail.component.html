@@ -1,0 +1,28 @@
+<!-- login.component.html -->
+<app-navbar></app-navbar>
+<div class="container1">
+    
+    <div class="center">
+        
+        <h2 class="glowing-text" style="color: rgb(159, 0, 0); font-weight: bold;">Login</h2><br>
+        <p>Enter your email</p>
+  
+        <div class="input-field">
+            <input type="email" [(ngModel)]="emailAddress">
+            <i class="fas fa-envelope"></i>
+        </div>
+        <p>Password</p>
+  
+        <div class="input-field">
+            <input type="password" [(ngModel)]="loginPassword">
+            <i class="fas fa-envelope"></i>
+        </div>
+        
+        <div class="input-field">
+            <button class="nav-link" (click)="login()">Submit</button>
+            <a class="nav-links red-text center-text" routerLink="/login" style="margin-top: 10px;font-size: 13px; font-family: 'Arial', sans-serif;">Login with Phone Number</a>
+        </div>
+        
+        <p style="font-size: 12px; margin-bottom: 10px; font-family: 'Arial', sans-serif;">Don't have an Account? <a class="nav-links " routerLink="/register" style="font-weight: bold; font-size: 14px;color: rgb(106, 106, 106);">Register</a></p>
+    </div>
+</div>

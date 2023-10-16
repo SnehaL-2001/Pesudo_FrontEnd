@@ -1,0 +1,28 @@
+<app-authnavbar></app-authnavbar>
+<div class="notification-container">
+
+    <div class="notification-list">
+  
+      <div *ngFor="let notification of notifications" class="notification-item">
+  
+        <div class="notification-content">
+  
+          <h2>{{ notification.title }}</h2>
+  
+          <p>{{ notification.message }}</p>
+  
+          <small>{{ notification.timestamp | date }}</small>
+  
+        </div>
+  
+        <div class="notification-count" *ngIf="!notification.read">
+  
+          <span>1</span>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </div>

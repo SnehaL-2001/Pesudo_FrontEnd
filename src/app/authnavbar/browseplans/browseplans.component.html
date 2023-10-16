@@ -1,0 +1,58 @@
+<app-authnavbar></app-authnavbar>
+<div class="pricing-area pt-110 pb-120">
+    <div class="container">
+      <div class="row pb-60">
+        <div class="col-xxl-12">
+          <div class="ba-section-title-wrapper text-center">
+            <h3 class="ba-section-title ba-has-wrapped-br">Choose Your Internet<br> Pack By Speed</h3>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="hello">
+            <input type="text" [(ngModel)]="searchPrice" placeholder="Search Plan Price" (click)="searchPlans()">
+            <a class="search-btn">
+         <i class="fas fa-search"  ></i></a>
+        </div>
+      </div>
+      
+        <div class="col-6">
+         <div class="hi">
+          <div class="form-group">
+            <select class="form-control" [(ngModel)]="selectedCategory" [ngModelOptions]="{standalone:true}" (ngModelChange)="clearSearch()">
+              <option value="all">Filter ALL</option>
+              <option *ngFor="let category of categoryOptions" [value]="category">{{ category }}</option>
+              
+             
+            </select>
+          </div>
+          </div>
+          
+       
+        </div>
+      </div>
+      
+      
+      
+    
+      <div class="row pricing-cards-container">
+        <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 mb-30 mb-xl-0" style="padding-bottom: 25px;" *ngFor="let plan of pricingPlans | plan:selectedCategory">
+          <ng-container *ngIf="!searchPrice">
+          <app-pricingcard [plan]="plan"></app-pricingcard>
+        </ng-container>
+        </div>
+        </div>
+        <div class="row pricing-cards-container">
+        <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 mb-30 mb-xl-0" style="padding-bottom: 25px;"*ngIf="filteredPlan.length>0">
+          <div *ngFor="let i of filteredPlan">
+          <app-pricingcard [plan]="i"></app-pricingcard>
+     
+        </div>
+      </div>
+      </div>
+      
+    </div>
+  </div>
+
+

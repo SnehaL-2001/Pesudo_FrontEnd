@@ -1,0 +1,102 @@
+/* app-accountcard.component.css */
+.card {
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center the content vertically */
+    border-radius: 10px;
+    padding: 30px; /* Increased padding for a larger card */
+    background-color: #222;
+    width: 350px; /* Increased width for a larger card */
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    margin: 10px;
+    box-shadow: 0 0 40px 0 rgba(57, 57, 57, 0.571);
+    z-index: 1;
+    top:20%;
+    left: 32.5%;
+    
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Slightly larger on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    transition: opacity 0.2s ease-in-out;
+    z-index: -1;
+    opacity: 0;
+  }
+  
+  .card:hover::before {
+    opacity: 1;
+    animation: fadeIn 0.5s ease-in-out; /* Fade in effect */
+  }
+  
+  .avatar-holder {
+    width: 140px; /* Larger avatar holder */
+    height: 140px; /* Larger avatar holder */
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px; /* Increased margin */
+  }
+  
+  .avatar-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .name a {
+    font-size: 24px; /* Larger font size */
+    font-weight: bold;
+    color: crimson;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .name a:hover {
+    color: #fff;
+  }
+  
+  h6 {
+    font-size: 16px; /* Larger font size */
+    color: #eee;
+    margin: 5px 0;
+  }
+  
+  button {
+    background-color: crimson;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px; /* Increased padding */
+    font-size: 16px; /* Larger font size */
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #960c23;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  

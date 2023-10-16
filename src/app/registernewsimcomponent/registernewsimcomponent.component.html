@@ -1,0 +1,199 @@
+<app-navbar></app-navbar>
+<div id="main-wrapper" class="oxyy-login-register">
+    <div class="container-fluid px-0">
+      <div class="row g-0 min-vh-100">
+        <!-- Welcome Text -->
+        <div class="col-md-5">
+          
+          <div class="hero-wrap h-100">
+                    <div class="hero-mask opacity-5 bg-dark"></div>
+                    <div class="snowflakes" aria-hidden="true">
+                        <!-- Your snowflake elements here -->
+                        <div class="snowflake">❆</div>
+                        <div class="snowflake">❅</div>
+                        <div class="snowflake">❄</div>
+                        <div class="snowflake">❅</div>
+                        <div class="snowflake">❅</div>
+                        <div class="snowflake">❄</div>
+                        <div class="snowflake">❅</div>
+                        <!-- Add more snowflake elements as needed -->
+                        
+                        <!-- Add more snowflake elements as needed -->
+                      </div>
+                    <div class="hero-bg hero-bg-scroll" style="background-image:url('https://th.bing.com/th/id/R.cf6f810da0a2f13e745e6102979b5704?rik=Wr2yf8sCoMQ5Gg&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2f7%2f3%2f3%2f972952-full-size-neon-red-background-1920x1080.jpg&ehk=PiVjMzG0DzOR9q9jS52iIBlBN3MmOuSVv0I95s4zW1g%3d&risl=&pid=ImgRaw&r=0');"></div>
+                    <div class="hero-content mx-auto w-100 h-100">
+                        <div class="container d-flex flex-column h-100">
+                            <div class="row g-0">
+                                <br>
+                                <br>
+                                <br>
+                                <br><br><br>
+                            </div>
+                            <div class="row g-0 mt-3">
+                                <div class="col-11 col-lg-9 mx-auto">
+                                    <h1 class="text-9 text-white fw-300 mb-5"><span class="fw-500">Welcome</span>, Looks like you're new here!</h1>
+
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Welcome Text End -->
+
+            <!-- Register Form
+  ========================= -->
+            <div class="col-md-7 d-flex flex-column align-items-center bg-dark">
+                <div class="container my-auto py-5">
+                    <div class="row g-0">
+                        <div class="col-11 col-md-8 col-lg-7 col-xl-6 mx-auto">
+                            <p class="text-2 text-light">Already a member? <a class="fw-500" href="login-17.html">Login</a></p>
+                            <h3 class="text-white mb-4">Register Your Account</h3>
+                             <small style="color:crimson;" *ngIf="errorMessage">{{ errorMessage}}</small>
+                            <form #registerForm="ngForm" (ngSubmit)="onSubmit()" class="form-dark">
+                                <!-- First Name -->
+                                <div class="mb-3">
+                                  <label class="form-label text-light" for="firstName">First Name</label>
+                                  <input
+                                    type="text"
+                                    class="form-control "
+                                    id="firstName"
+                                    name="firstName"
+                                    
+                                    placeholder="Enter Your First Name"
+                                    [(ngModel)]="user.firstName" required #firstName="ngModel" required [class.is-invalid]="firstName.invalid && firstName.touched" minlength="3"
+                                  />
+                                  <div class="invalid-feedback" *ngIf="firstName.invalid && firstName.touched">
+                                    <small class="text-danger" *ngIf="firstName.errors?.['required']">Product Name is required</small>
+                        <!--             <small class="text-danger" *ngIf="pname.errors?.['pattern']">Product Name should have only alphabets</small>
+                         -->            <small class="text-danger" *ngIf="firstName.errors?.['minlength']">Product Name should have at least 3 characters</small>
+                                  </div>
+                                </div>
+                        
+                                <!-- Last Name -->
+                                <div class="mb-3">
+                                  <label class="form-label text-light" for="lastName">Last Name</label>
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="lastName"
+                                    name="lastName"
+                                   
+                                    placeholder="Enter Your Last Name"
+                                    [(ngModel)]="user.lastName" required #lastName="ngModel" required [class.is-invalid]="lastName.invalid && lastName.touched" minlength="3"
+                                  />
+                                  <div class="invalid-feedback" *ngIf="lastName.invalid && lastName.touched">
+                                    <small class="text-danger" *ngIf="lastName.errors?.['required']">Product Name is required</small>
+                        <!--             <small class="text-danger" *ngIf="pname.errors?.['pattern']">Product Name should have only alphabets</small>
+                         -->            <small class="text-danger" *ngIf="lastName.errors?.['minlength']">Product Name should have at least 3 characters</small>
+                                  </div>
+                                </div>
+                        
+                                <!-- Date Of Birth -->
+                                <div class="mb-3">
+                                  <label class="form-label text-light" for="dob">Date Of Birth</label>
+                                  <input type="date" class="form-control" id="dob" name="dob" [(ngModel)]="user.dob"  #dob="ngModel" required [class.is-invalid]="dob.invalid && dob.touched" />
+                                  <div class="invalid-feedback" *ngIf="dob.invalid && dob.touched">
+                                    <small class="text-danger" *ngIf="dob.errors?.['required']">Date Of Birth is required</small>
+                                  
+                                </div></div>
+                        
+                                <!-- Email Address -->
+                                <div class="mb-3">
+                                  <label class="form-label text-light" for="emailAddress">Email Address</label>
+                                  <input
+                                    type="email"
+                                    class="form-control"
+                                    id="emailAddress"
+                                    name="emailAddress"
+                                   
+                                    placeholder="Enter Your Email"
+                                    [(ngModel)]="user.emailAddress" required #emailAddress="ngModel" required [class.is-invalid]="emailAddress.invalid && emailAddress.touched" 
+                                     
+                                    pattern="[a-zA-Z0-9.%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+                                  />
+                                  <div class="invalid-feedback" *ngIf="emailAddress.invalid && emailAddress.touched">
+                                    <small class="text-danger" *ngIf="emailAddress.errors?.['required']">email is required</small>
+                        <!--             <small class="text-danger" *ngIf="pname.errors?.['pattern']">Product Name should have only alphabets</small>
+                         -->            <small class="text-danger" *ngIf="emailAddress.errors?.['pattern']">email should have proper format</small>
+                                  </div>
+                                  
+                                </div>
+                        
+                                <!-- Address -->
+                                <div class="mb-3">
+                                  <label class="form-label text-light" for="address">Address</label>
+                                  <textarea class="form-control" id="address" name="address" [(ngModel)]="user.address" required #address="ngModel" required [class.is-invalid]="address.invalid && address.touched" 
+                                     
+                                  
+                                ></textarea>
+                                <div class="invalid-feedback" *ngIf="address.invalid && address.touched">
+                                <small class="text-danger" *ngIf="address.errors?.['required']">address is required</small>
+                                </div></div>
+                        
+                                
+                            
+                                <!-- Location -->
+<div class="mb-3">
+  <label class="form-label text-light" for="location">Location</label>
+  <select
+      class="form-control"
+      id="location"
+      name="location"
+      [(ngModel)]="user.location"
+      required
+      #location="ngModel" required [class.is-invalid]="address.invalid && address.touched" >
+      <option value="" disabled>Select Location</option>
+      <option value="Chennai">Chennai</option>
+      <option value="Bangalore">Bangalore</option>
+      <option value="Hyderabad">Hyderabad</option>
+      <option value="Mumbai">Mumbai</option>
+      <option value="Delhi">Delhi</option>
+      
+  </select>
+  <div class="invalid-feedback" *ngIf="location.invalid && location.untouched">
+    <small class="text-danger">Location is required</small>
+</div>
+</div>
+
+                                <div class="mb-3">
+                                  <label class="form-label text-light" for="loginPassword">Password</label>
+                                  <input
+                                    type="password"
+                                    class="form-control"
+                                    id="loginPassword"
+                                    name="loginPassword"
+                                    
+                                    placeholder="Enter Password"
+                                    [(ngModel)]="user.loginPassword" required #loginPassword="ngModel" required [class.is-invalid]="loginPassword.invalid && loginPassword.touched" minlength="6"
+                                    pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]+$"/>
+                                    <div class="invalid-feedback" *ngIf="loginPassword.invalid && loginPassword.touched">
+                                        <small class="text-danger" *ngIf="loginPassword.errors?.['required']">Password required</small>
+                            <!--             <small class="text-danger" *ngIf="pname.errors?.['pattern']">Product Name should have only alphabets</small>
+                             -->            <small class="text-danger" *ngIf="loginPassword.errors?.['pattern']">Password should have atleast 1 character and 1 number</small>
+                             <small class="text-danger" *ngIf="loginPassword.errors?.['minlength']">Password should have atleast 6 characters</small>
+                                      </div>
+     
+                                  
+                                </div>
+     
+                        
+                                <!-- Agree to Terms -->
+                                <div class="form-check text-light my-4">
+                                  <input id="agree" name="agree" class="form-check-input" type="checkbox" />
+                                  <label class="form-check-label" for="agree">I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.</label>
+                                </div>
+                        
+                                <!-- Register Button -->
+                                <button class="btn btn-primary shadow-none my-2" type="submit" [disabled]="registerForm.invalid">Register</button>
+                              </form>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- Register Form End -->
+        </div>
+    </div>
+</div>

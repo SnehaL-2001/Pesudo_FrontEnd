@@ -1,0 +1,44 @@
+
+<app-adminnavbar></app-adminnavbar>
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Plan Name:</label>
+      <input type="text" id="name" name="name" formControlName="name" required class="form-control" [disabled]="true">
+    </div>
+    <div class="form-group">
+      <label for="category">Category:</label>
+      <input type="text" id="category" name="category" formControlName="category" required class="form-control" [disabled]="true">
+    </div>
+    <div class="form-group">
+      <label for="planPrice">Plan Price:</label>
+      <input type="number" id="planPrice" name="planPrice" formControlName="planPrice" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="data">Data (GB):</label>
+      <input type="text" id="data" name="data" formControlName="data" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="calling">Calling:</label>
+      <input type="text" id="data" name="data" formControlName="calling" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="messagesPerDay">Messages per Day:</label>
+      <input type="number" id="messagesPerDay" name="messagesPerDay" formControlName="messagesPerDay" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="validity">Validity (days):</label>
+      <input type="number" id="validity" name="validity" formControlName="validity" required class="form-control">
+    </div>
+  
+    <div class="form-group">
+      <label>Features:</label>
+      <div class="form-check" *ngFor="let feature of featureOptions; let i = index">
+        <input type="checkbox" [formControlName]="'feature' + i" class="form-check-input">
+        <label class="form-check-label">{{ feature }}</label>
+      </div>
+    </div>
+    
+  
+    <button type="submit" class="btn btn-primary">Update Plan</button>
+  </form>
+  

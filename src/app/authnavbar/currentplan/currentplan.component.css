@@ -1,0 +1,67 @@
+/* Add custom CSS class for the card */
+
+
+.card-container {
+    background-color: #f4f4f4a1; /* Background color behind the card */
+    padding: 20px; /* Add padding for spacing */
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    height: 90.6vh;/* Add padding for spacing */
+}
+.custom-card {
+    background-color: #ffffff; /* Gray background color */
+    padding: 20px; /* Add padding for spacing */
+    top: 20%;
+    width: 70%;
+    left: 15%;
+    justify-content: center;
+    position: absolute;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for elevation */
+}
+
+/* Style the card title */
+.custom-card .card-title {
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Style the card text */
+.custom-card .card-text {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Style the headings and details */
+.custom-card h6 {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Style the "Subscribe Now" button */
+.custom-card .btn-primary {
+    background-color: #d30505;
+    color: #fff;
+    border: none;
+    margin-top: 20px;
+}
+
+.custom-card .btn-primary:hover {
+    background-color: #b30000;
+}
+.custom-card i {
+    font-size: 24px; /* Adjust the icon size */
+    color: #888888; /* Change the icon color to blue */
+    margin-right: 8px; /* Add some spacing between the icon and text */
+  }
+  
+  /* Style the card content */
+  .custom-card h6 {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+  }

@@ -1,0 +1,61 @@
+
+<app-authnavbar></app-authnavbar>
+<div class="containers">
+<div class="bgm">
+<div class="view">
+  <div class="plane main">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+</div>
+<div class="night">
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+</div>
+<div class="container mt-4">
+  <div class="recharge-container">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="card recharge-card">
+        <div class="card-header ">
+          <h4 class="mb-0" style="font-family: Arial, Helvetica, sans-serif;">RECHARGE DETAILS</h4>
+        </div>
+        <div class="card-body">
+          <ul>
+            
+              <div class="recharge-details">
+               <strong >Mobile Number:{{mobile}}
+               </strong> <br>
+               <strong>Plan Name:</strong> {{ plandetail.name }} <br>
+
+                <strong>Amount:</strong> ₹{{ plandetail.planPrice }} <br>
+                <strong>Validity:</strong> {{ plandetail.validity }} days<br><br>
+                <strong>Date:</strong>{{ currentTime| date:'medium'}}
+                <button (click)="payNow(plandetail)" class="button">Pay Now</button>
+              </div>
+            
+          </ul>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>

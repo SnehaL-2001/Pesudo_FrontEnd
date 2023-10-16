@@ -1,0 +1,15 @@
+/* app.component.css */
+.abc {
+  justify-content: center;
+  position: absolute;
+
+    width: 96%;
+    height: 88vh;
+    position: relative;
+    left: 50px;
+    background-color: rgba(211, 211, 211, 0.171);
+
+  }
+  
+
+  

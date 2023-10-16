@@ -1,0 +1,13 @@
+<app-authnavbar></app-authnavbar>
+<div class="abc">
+    <ng-container *ngIf="users">
+    <app-accountcard [firstName]="users.firstName"
+    [lastName]="users.lastName"
+            [emailAddress]="users.emailAddress"
+            [phoneNumber]="users.phoneNumber"
+            [status]="users.status"
+          
+            ></app-accountcard>
+    </ng-container>
+  </div>
+  

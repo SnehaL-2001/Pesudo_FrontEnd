@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<nav class="navbar navbar-expand-lg navbar  static-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <!-- Make the logo image smaller -->
+            <img src="https://career-portal.prodapt.com/wp-content/uploads/2022/01/Prodapt-icon-logo.png" alt="Logo" height="24">
+            <!-- Add the text "ProWaveX" with individual styling for "Pro" and "WaveX" -->
+            <span class="logo-text">
+                <span class="pro-text" style="color: black;">Pro</span><span class="wave-text" style="color: black">WaveX</span>
+            </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/manageplans" routerLinkActive="active">
+                      Manage Plans
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/newrequest" routerLinkActive="active">
+                       User Details
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/recharges" routerLinkActive="active">
+                        Recharges
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" routerLink="/home" routerLinkActive="active" (click)="service.isLogin=false">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<router-outlet></router-outlet>

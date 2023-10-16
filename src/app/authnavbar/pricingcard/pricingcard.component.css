@@ -1,0 +1,299 @@
+/* Style the individual pricing box */
+/* Add this CSS to your stylesheet or within a <style> block */
+.horizontal-images {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; /* Vertically center the images */
+  margin-top: 20px; /* Add space between the images and the content above */
+}
+
+/* Adjust the image size as needed */
+.horizontal-images img {
+  width: 30px; /* Adjust the width to make the images larger */
+  height: auto; /* Maintain the image aspect ratio */
+  margin-right: 2px; /* Add space between the images */
+}
+
+.ba-pricing-box {
+    /* position: relative; */
+    padding: 25px; /* Decreased padding further to make the box smaller */
+    border-radius: 8px; /* Slightly reduced border-radius */
+    background-image: url("https://img.freepik.com/free-vector/black-background-with-focus-spot-light_1017-27230.jpg?w=900&t=st=1696655229~exp=1696655829~hmac=64351e4a1ff37c62e4c9f124b4c0be0a8bc157944564fa78565a3c448cf9692a");
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5); /* Slightly reduced box-shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+    /* width: auto;
+    height: 450px; */
+    position: absolute;
+    width: 97%;
+    height: 97%;
+    /* background: #000000; */
+    /* border-radius: 20px; */
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    text-align: center;
+    color: #ffffff;
+    overflow: hidden;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 60px -12px inset,
+      rgba(0, 0, 0, 0.5) 0px 18px 36px -18px inset;
+
+   /* Increased margin to add more space between boxes */
+  }
+  
+  /* Adjust the triangle position */
+  .triangle-container svg {
+    transform: translate(-100%, -100%);
+  }
+  
+
+  /* Style the pricing box icons container to align icons horizontally */
+.ba-pricing-box-icons-wrap {
+    display: flex; /* Display icons in a row */
+    justify-content: space-around; /* Distribute space around icons */
+  }
+  
+  /* Style individual pricing box icons */
+  /* Style individual pricing box icons */
+.ba-pricing-box-icon {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.635); /* Set the icon color to red */
+    margin: 0 10px;
+    cursor: pointer;
+    justify-content: center;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Add box-shadow transition for the outline */
+    padding: 5px; /* Add some padding to the icons for the outline effect */
+   /* Make the icons circular */
+  }
+  
+  .ba-pricing-box-icon.active {
+    color:  rgba(174, 0, 0, 0.699); /* Add an inset circular outline with a red color */
+  }
+  
+  
+  /* Apply the waving animation on hover */
+  .ba-pricing-box:hover .waving-image {
+    transform: rotate(-2deg) scaleY(1.1);
+  }
+  
+  /* Style the title of the pricing box */
+  .ba-pricing-box-title {
+    font-size: 18px; /* Decreased font size */
+    padding: 10px;
+    color: #fffbfb;
+    margin: 0;
+  }
+  
+  /* Style the price and duration */
+  .ba-pricing-box-count {
+    font-size: 24px; /* Decreased font size */
+    color: #891717;
+    margin: 10px 0;
+  }
+  
+  .ba-pricing-box-count span {
+    font-size: 14px; /* Decreased font size */
+    color: #777;
+  }
+  
+  /* Style the feature list */
+  .ba-pricing-box-list-wrap ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  .ba-pricing-box-text{
+    color: red;
+  }
+  
+  .ba-pricing-box-list-wrap li {
+    font-size: 12px; 
+    color: #333;
+    list-style: none;
+   
+   
+  }
+  ul.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Style the "Get Started" button */
+  .ba-submit-btn {
+    display: inline-block;
+    padding: 8px 15px; /* Decreased padding */
+    background-color: #ce1818;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .ba-submit-btn:hover {
+    background-color: #c91c1cd1;
+  }
+  
+  /* Style the inner card */
+  .inner-card {
+    background-color: rgba(108, 108, 108, 0.082);
+    color: white;
+    border-radius: 8px;
+    padding: 10px; /* Decreased padding */
+    margin-top: 10px; /* Decreased margin-top */
+    position: relative; /* Add position relative */
+    overflow: hidden; /* Hide overflowing gradient */
+  }
+  
+  /* Add a pseudo-element for the gradient animation */
+  
+  /* Style the inner card title */
+  .inner-card-title {
+    font-size: 14px; /* Decreased font size */
+    color: #333;
+    margin: 0;
+  }
+  
+  /* Style the inner card list */
+  .inner-card-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    
+  }
+  
+  .inner-card-list li {
+    font-size: 14px; /* Decreased font size */
+    color: #a7a4a4;
+    margin-bottom: 4px;
+    margin-left: 40px;
+    text-align: left; 
+     /* Decreased margin */
+  }
+  
+  /* Style the "Learn More" button on the inner card */
+  .inner-card-button {
+    display: inline-block;
+    padding: 6px 12px; /* Decreased padding */
+    background: linear-gradient(to bottom, #bf2525, #bf1b1b);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  /* Hover effect for inner card */
+  .inner-card:hover {
+    background-image: linear-gradient(to right, #7c1f02bc 0%, #a90303c7 100%); /* Linear gradient background */
+    background-color: rgba(108, 108, 108, 0.082);
+    transition: background-image 0.3s ease-in-out; /* Transition the background-image property */
+  }
+  
+  /* Change inner card color on hover */
+  .ba-pricing-box:hover .inner-card-title,
+  .ba-pricing-box:hover .inner-card-list li {
+    color: #fff;
+  }
+  
+  /* Change "Learn More" button background color on inner card hover */
+  .ba-pricing-box:hover .inner-card-button {
+    background: linear-gradient(to bottom, black);
+  }
+  
+  /* Add transition to inner card */
+  .ba-pricing-box .inner-card {
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  
+  /* Waving Lines Container */
+  .waving-lines {
+    position: relative;
+    width: 100%;
+    height: 30px; /* Decreased height */
+    background-color: transparent;
+    overflow: hidden;
+  }
+  
+  /* Waving Animation */
+  .waving-lines::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 25%, #ff5733 25%, #ff5733 50%, transparent 50%, transparent 75%, #ff5733 75%);
+    background-size: 40px 40px; /* Adjust the size and spacing of the lines */
+    animation: wave 2s linear infinite;
+  }
+  
+  /* Waving Animation Keyframes */
+  @keyframes wave {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  /* Triangle Container */
+  .triangle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px; /* Decreased the size */
+    height: 15px; /* Decreased the size */
+    z-index: 2;
+  }
+  
+  .triangle-top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 45px solid transparent; /* Decreased the size */
+    border-right: 45px solid rgb(161, 0, 0);
+  }
+  .ba-check-box-icon{
+    color: rgba(163, 11, 11, 0.89);
+  }
+
+  
+  .cardBox {
+    width: 325px;
+    height: 460px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: #000000;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 10px 0px,
+      rgba(0, 0, 0, 0.5) 0px 2px 25px 0px;
+  }
+  .cardBox::before {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 150%;
+    background: #000000;
+  background: -webkit-linear-gradient(to right, #c20000eb, #830000, #000000);
+  background: linear-gradient(to right, #dd0000eb, #830000, #000000);
+    animation: glowing01 5s linear infinite;
+    transform-origin: center;
+    animation: glowing 5s linear infinite;
+  }
+  
+  @keyframes glowing {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

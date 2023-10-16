@@ -1,0 +1,43 @@
+.nav-link.active{
+    background-color: rgb(207, 0, 0);
+    border-radius: 5px;
+   
+    color: #ffffff;
+}
+/* Style for "Pro" text */
+.pro-text {
+    color: white;
+    font-weight: bold;
+}
+.nav-item i  {
+   font-size: 12px;
+}
+.nav-item a  {
+   font-size: 14.5px;
+}
+.nav-item button {
+    font-size: 14.5px;
+ }
+
+/* Style for "WaveX" text */
+.wave-text {
+    color: white;
+    font-weight: bold;
+}
+.nav-item li{
+    word-spacing: 10px;
+}
+/* Adjust the padding for the logo to control spacing */
+.navbar-brand {
+    
+        border: none;
+    
+}
+
+/* Add margin-right to the navbar links for spacing */
+.nav-link {
+    margin-right: 15px; /* Adjust the value as needed to control the spacing */
+}
+.logo-text{
+    color: black;
+}

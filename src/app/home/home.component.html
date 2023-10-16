@@ -1,0 +1,506 @@
+<app-navbar></app-navbar>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+  integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAe"></script>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+<section class="home-section" id="title">
+
+    <div class="container-fluid">
+   
+       <div class="row">
+         <div class="col-lg-8">
+           <h2 class="big-heading">UPGRADE TO THE BEST-IN-CLASS LOCAL INTERNET PROVIDER.</h2>
+           <p class="content">Bid Farewell to Lag, Buffering, and Downtime – Uplift Your Online Adventure Today! </p>
+             <button type="button" class="btn btn-outline-warning" routerLink="/register">Know More</button>
+             <button type="button" class="btn btn-outline-info">Learn More</button>
+         </div>
+         
+       </div>
+     </div>
+   
+     </section>
+
+     <section id="stats-section" class="bg-default pb-110" data-background="assets/img/bg/statics.jpg">
+      <div class="container">
+          <div class="row justify-content-center justify-content-md-between gx-md-4 gx-2">
+              <div class="col-md-3 col-sm-4 col-6">
+                  <div class="single-stat">
+                      <h5 class="single-stat__number"><span class="odometer" data-count="260">0</span>k</h5>
+                      <span class="single-stat__label">Internet Package</span>
+                  </div>
+              </div>
+              <div class="col-md-3 col-sm-4 col-6">
+                  <div class="single-stat">
+                      <h5 class="single-stat__number"><span class="odometer" data-count="101">0</span>k</h5>
+                      <span class="single-stat__label">Satisfaction Clients</span>
+                  </div>
+              </div>
+              <div class="col-md-3 col-sm-4 col-6">
+                  <div class="single-stat">
+                      <h5 class="single-stat__number"><span class="odometer" data-count="2145">0</span></h5>
+                      <span class="single-stat__label">Available Channels</span>
+                  </div>
+              </div>
+              
+          </div>
+      </div>
+  </section>
+<!-- Add jQuery before your script -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+<!-- Add Odometer library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAe"></script>
+
+<!-- Your script with defer attribute -->
+<script defer>
+  jQuery(".odometer").appear(function(e) {
+    var odo = jQuery(".odometer");
+    odo.each(function() {
+      var countNumber = jQuery(this).attr("data-count");
+      jQuery(this).html(countNumber);
+    });
+  });
+</script>
+<section id="about" class="about home-two-about pt-50 pb-100">
+  <div class="home-two-about-bg">
+      <img src="https://template.viserlab.com/viserfix/demos/assets/images/home-02/about/about-left-bg.png" alt="">
+      <img src="https://template.viserlab.com/viserfix/demos/assets/images/home-02/about/about-right-bg.png" alt="">
+  </div>
+  <div class="container">
+      <div class="row gy-5">
+          <div class="col-lg-6">
+              <div class="about-left">
+                  <div class="play-button">
+                      <a href="https://www.youtube.com/watch?v=_D-mh3aZK_4" class="magnific-video"> <i class="fas fa-play-circle" aria-hidden="true" style="font-size: 60px; color: rgb(186, 0, 0);"></i></a>
+                  </div>
+                  <div class="home-two-about-thumb">
+                      <span><img class="w-82 max-img-size" src="https://template.viserlab.com/viserfix/demos/assets/images/home-02/about/about-01.png" alt=""></span>
+                      <span><img class="w-82 max-img-size" src="https://template.viserlab.com/viserfix/demos/assets/images/home-02/about/about-02.png" alt=""></span>
+                  </div>
+
+                  <strong></strong>
+              </div>
+          </div>
+          <div class="col-lg-6">
+              <div class="about-right-content">
+                  <div class="row">
+                      <div class="col-lg-12">
+                          <div class="section-header style-two ps-lg-5">
+                              <h4 class="subtitle"> ABOUT US</h4>
+                              <h2 class="title">DISCOVER A WINDER WORD OF RERATION</h2>
+                              <p class="para">We have developed reliably and naturally as an interchange supplier serving an assorted arrangement of business class voice and information administrations. </p>
+                              <p class="para mt-lg-4 mt-3">Broadband Internet has progressed significantly since its foundation in 1997.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="about-button ps-lg-5 mt-xl-0 mt-3">
+                      <a href="about.html" class="btn--base">DISCOVER MORE</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section id="package-section" class="pt-120 pb-120 bg-default text-center" data-background="assets/img/bg/package.jpg">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-lg-12">
+              <h2 class="ba-section-title section-title">Choose Your Internet <br> Pack By Speed</h2>
+              <div class="package-section__btns">
+                  <a href="#" class="custom-btn">What speed do I need?</a>
+                  <a href="#" class="custom-btn">What is Internet speed?</a>
+              </div>
+          </div>
+      </div>
+
+      <div class="row justify-content-center">
+          <div class="col-xxl-11">
+              <div class="package-tabs">
+                  <ul class="nav nav-pills justify-content-center" id="pills-tab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                          <button class="nav-link active" id="pills-400-tab" data-bs-toggle="pill" data-bs-target="#pills-400" type="button" role="tab" aria-controls="pills-400" aria-selected="true">
+                              <img src="https://devsaidul.com/tf/html/nafiab/assets/img/icons/package-icon-2.svg" alt="network icon"
+                                  class="package-nav-btn__icon">
+                              <span class="package-nav-btn__title">400</span>
+                              <span class="package-nav-btn__subtitle">Mbps</span>
+                          </button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="pills-500-tab" data-bs-toggle="pill" data-bs-target="#pills-500" type="button" role="tab" aria-controls="pills-500" aria-selected="false">
+                              <img src="https://devsaidul.com/tf/html/nafiab/assets/img/icons/package-icon-2.svg" alt="network icon"
+                                  class="package-nav-btn__icon">
+                              <span class="package-nav-btn__title">500</span>
+                              <span class="package-nav-btn__subtitle">Mbps</span>
+                          </button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="pills-600-tab" data-bs-toggle="pill" data-bs-target="#pills-600" type="button" role="tab" aria-controls="pills-600" aria-selected="false">
+                              <img src="https://devsaidul.com/tf/html/nafiab/assets/img/icons/package-icon-2.svg" alt="network icon"
+                                  class="package-nav-btn__icon">
+                              <span class="package-nav-btn__title">600</span>
+                              <span class="package-nav-btn__subtitle">Mbps</span>
+                          </button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="pills-700-tab" data-bs-toggle="pill" data-bs-target="#pills-700" type="button" role="tab" aria-controls="pills-700" aria-selected="false">
+                              <img src="https://devsaidul.com/tf/html/nafiab/assets/img/icons/package-icon-2.svg" alt="network icon"
+                                  class="package-nav-btn__icon">
+                              <span class="package-nav-btn__title">700</span>
+                              <span class="package-nav-btn__subtitle">Mbps</span>
+                          </button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="pills-800-tab" data-bs-toggle="pill" data-bs-target="#pills-800" type="button" role="tab" aria-controls="pills-800" aria-selected="false">
+                              <img src="https://devsaidul.com/tf/html/nafiab/assets/img/icons/package-icon-2.svg" alt="network icon"
+                                  class="package-nav-btn__icon">
+                              <span class="package-nav-btn__title">800</span>
+                              <span class="package-nav-btn__subtitle">Mbps</span>
+                          </button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="pills-900-tab" data-bs-toggle="pill" data-bs-target="#pills-900" type="button" role="tab" aria-controls="pills-900" aria-selected="false">
+                              <img src="https://devsaidul.com/tf/html/nafiab/assets/img/icons/package-icon-2.svg" alt="network icon"
+                                  class="package-nav-btn__icon">
+                              <span class="package-nav-btn__title">900</span>
+                              <span class="package-nav-btn__subtitle">Mbps</span>
+                          </button>
+                      </li>
+                  </ul>
+
+                  <div class="tab-content" id="pills-tabContent">
+                      <div class="tab-pane fade show active" id="pills-400" role="tabpanel" aria-labelledby="pills-400-tab">
+
+                          <div class="package-details">
+                              <div class="row justify-content-between">
+                                  <div class="col-xl-6 col-lg-7">
+                                      <h5 class="package-details__title">Manage Current Plan</h5>
+                                      <p class="package-details__txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem fugit pariatur libero itaque, nisi minus doloremque sed iusto a earum?
+                                      </p>
+
+                                      <div class="package-details__features-container d-flex">
+                                          <div class="single-pack-feature">
+                                              <h6 class="single-pack-feature__title">800 Mbps is good for
+                                              </h6>
+                                              <ul class="single-pack-feature-list">
+                                                  <li>Up to 11 devices</li>
+                                                  <li>Fast downloads</li>
+                                                  <li>HD streaming</li>
+                                                  <li>Multiplayer gaming</li>
+                                              </ul>
+                                          </div>
+
+                                          <div class="single-pack-feature single-pack-feature--colored">
+                                              <h6 class="single-pack-feature__title">400 Mbps is good for
+                                              </h6>
+                                              <ul class="single-pack-feature-list">
+                                                  <li>Up to 11 devices</li>
+                                                  <li>Fast downloads</li>
+                                                  <li>HD streaming</li>
+                                                  <li>Multiplayer gaming</li>
+                                              </ul>
+                                          </div>
+                                      </div>
+
+                                      <div class="special-offer">
+                                          <img src="https://devsaidul.com/tf/html/nafiab/assets/img/feature-list/feature-list-vertical-2.png" alt="xFi" class="special-offer__img">
+                                          <div class="special-offer__info">
+                                              <span class="special-offer__title">Add an xFi Gateway at
+                                                  checkout</span>
+                                              <span class="special-offer__subtitle">Enjoy a powerful,
+                                                  secure
+                                                  connection.</span>
+                                          </div>
+
+                                          <span class="special-offer__price">$18/mo</span>
+                                      </div>
+                                  </div>
+
+                                  <div class="col-lg-5">
+                                      <img src="https://devsaidul.com/tf/html/nafiab/assets/img/package/package.jpg" alt="people using phone" class="package-details__img">
+                                  </div>
+                              </div>
+                          </div>
+
+
+                      </div>
+
+
+                      <div class="tab-pane fade" id="pills-500" role="tabpanel" aria-labelledby="pills-500-tab">
+                          <div class="package-details">
+                              <div class="row justify-content-between">
+                                  <div class="col-xl-6 col-lg-7">
+                                      <h5 class="package-details__title">Manage Current Plan</h5>
+                                      <p class="package-details__txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem fugit pariatur libero itaque, nisi minus doloremque sed iusto a earum?
+                                      </p>
+
+                                      <div class="package-details__features-container d-flex">
+                                          <div class="single-pack-feature">
+                                              <h6 class="single-pack-feature__title">800 Mbps is good for
+                                              </h6>
+                                              <ul class="single-pack-feature-list">
+                                                  <li>Up to 11 devices</li>
+                                                  <li>Fast downloads</li>
+                                                  <li>HD streaming</li>
+                                                  <li>Multiplayer gaming</li>
+                                              </ul>
+                                          </div>
+
+                                          <div class="single-pack-feature single-pack-feature--colored">
+                                              <h6 class="single-pack-feature__title">500 Mbps is good for
+                                              </h6>
+                                              <ul class="single-pack-feature-list">
+                                                  <li>Up to 11 devices</li>
+                                                  <li>Fast downloads</li>
+                                                  <li>HD streaming</li>
+                                                  <li>Multiplayer gaming</li>
+                                              </ul>
+                                          </div>
+                                      </div>
+
+                                      <div class="special-offer">
+                                          <img src="assets/img/feature-list/feature-list-vertical-2.png" alt="xFi" class="special-offer__img">
+                                          <div class="special-offer__info">
+                                              <span class="special-offer__title">Add an xFi Gateway at
+                                                  checkout</span>
+                                              <span class="special-offer__subtitle">Enjoy a powerful,
+                                                  secure
+                                                  connection.</span>
+                                          </div>
+
+                                          <span class="special-offer__price">$18/mo</span>
+                                      </div>
+                                  </div>
+
+                                  <div class="col-lg-5">
+                                      <img src="assets/img/package/package.jpg" alt="people using phone" class="package-details__img">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+
+                      <div class="tab-pane fade" id="pills-600" role="tabpanel" aria-labelledby="pills-600-tab">
+                          <div class="package-details">
+                              <div class="row justify-content-between">
+                                  <div class="col-xl-6 col-lg-7">
+                                      <h5 class="package-details__title">Manage Current Plan</h5>
+                                      <p class="package-details__txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem fugit pariatur libero itaque, nisi minus doloremque sed iusto a earum?
+                                      </p>
+
+                                      <div class="package-details__features-container d-flex">
+                                          <div class="single-pack-feature">
+                                              <h6 class="single-pack-feature__title">800 Mbps is good for
+                                              </h6>
+                                              <ul class="single-pack-feature-list">
+                                                  <li>Up to 11 devices</li>
+                                                  <li>Fast downloads</li>
+                                                  <li>HD streaming</li>
+                                                  <li>Multiplayer gaming</li>
+                                              </ul>
+                                          </div>
+
+                                          <div class="single-pack-feature single-pack-feature--colored">
+                                              <h6 class="single-pack-feature__title">600 Mbps is good for
+                                              </h6>
+                                              <ul class="single-pack-feature-list">
+                                                  <li>Up to 11 devices</li>
+                                                  <li>Fast downloads</li>
+                                                  <li>HD streaming</li>
+                                                  <li>Multiplayer gaming</li>
+                                              </ul>
+                                          </div>
+                                      </div>
+
+                                      <div class="special-offer">
+                                          <img src="assets/img/feature-list/feature-list-vertical-2.png" alt="xFi" class="special-offer__img">
+                                          <div class="special-offer__info">
+                                              <span class="special-offer__title">Add an xFi Gateway at
+                                                  checkout</span>
+                                              <span class="special-offer__subtitle">Enjoy a powerful,
+                                                  secure
+                                                  connection.</span>
+                                          </div>
+
+                                          <span class="special-offer__price">$18/mo</span>
+                                      </div>
+                                  </div>
+
+                                  <div class="col-lg-5">
+                                      <img src="assets/img/package/package.jpg" alt="people using phone" class="package-details__img">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="tab-pane fade" id="pills-700" role="tabpanel" aria-labelledby="pills-700-tab">
+                          <div class="package-details">
+                              <div class="row justify-content-between">
+                                  <div class="col-xl-6 col-lg-7">
+                                      <h5 class="package-details__title">Manage Current Plan</h5>
+                                      <p class="package-details__txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem fugit pariatur libero itaque, nisi minus doloremque sed iusto a earum?
+                                      </p>
+
+                                      <div class="package-details__features-container d-flex">
+                                          <div class="single-pack-feature">
+                                              <h6 class="single-pack-feature__title">800 Mbps is good for
+                                              </h6>
+                                              <ul class="single-pack-feature-list">
+                                                  <li>Up to 11 devices</li>
+                                                  <li>Fast downloads</li>
+                                                  <li>HD streaming</li>
+                                                  <li>Multiplayer gaming</li>
+                                              </ul>
+                                          </div>
+
+                                          <div class="single-pack-feature single-pack-feature--colored">
+                                              <h6 class="single-pack-feature__title">700 Mbps is good for
+                                              </h6>
+                                              <ul class="single-pack-feature-list">
+                                                  <li>Up to 11 devices</li>
+                                                  <li>Fast downloads</li>
+                                                  <li>HD streaming</li>
+                                                  <li>Multiplayer gaming</li>
+                                              </ul>
+                                          </div>
+                                      </div>
+
+                                      <div class="special-offer">
+                                          <img src="assets/img/feature-list/feature-list-vertical-2.png" alt="xFi" class="special-offer__img">
+                                          <div class="special-offer__info">
+                                              <span class="special-offer__title">Add an xFi Gateway at
+                                                  checkout</span>
+                                              <span class="special-offer__subtitle">Enjoy a powerful,
+                                                  secure
+                                                  connection.</span>
+                                          </div>
+
+                                          <span class="special-offer__price">$18/mo</span>
+                                      </div>
+                                  </div>
+
+                                  <div class="col-lg-5">
+                                      <img src="assets/img/package/package.jpg" alt="people using phone" class="package-details__img">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="tab-pane fade" id="pills-800" role="tabpanel" aria-labelledby="pills-800-tab">
+                          <div class="package-details">
+                              <div class="row justify-content-between">
+                                  <div class="col-xl-6 col-lg-7">
+                                      <h5 class="package-details__title">Manage Current Plan</h5>
+                                      <p class="package-details__txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem fugit pariatur libero itaque, nisi minus doloremque sed iusto a earum?
+                                      </p>
+
+                                      <div class="package-details__features-container d-flex">
+                                          <div class="single-pack-feature">
+                                              <h6 class="single-pack-feature__title">800 Mbps is good for
+                                              </h6>
+                                              <ul class="single-pack-feature-list">
+                                                  <li>Up to 11 devices</li>
+                                                  <li>Fast downloads</li>
+                                                  <li>HD streaming</li>
+                                                  <li>Multiplayer gaming</li>
+                                              </ul>
+                                          </div>
+
+                                          <div class="single-pack-feature single-pack-feature--colored">
+                                              <h6 class="single-pack-feature__title">800 Mbps is good for
+                                              </h6>
+                                              <ul class="single-pack-feature-list">
+                                                  <li>Up to 11 devices</li>
+                                                  <li>Fast downloads</li>
+                                                  <li>HD streaming</li>
+                                                  <li>Multiplayer gaming</li>
+                                              </ul>
+                                          </div>
+                                      </div>
+
+                                      <div class="special-offer">
+                                          <img src="assets/img/feature-list/feature-list-vertical-2.png" alt="xFi" class="special-offer__img">
+                                          <div class="special-offer__info">
+                                              <span class="special-offer__title">Add an xFi Gateway at
+                                                  checkout</span>
+                                              <span class="special-offer__subtitle">Enjoy a powerful,
+                                                  secure
+                                                  connection.</span>
+                                          </div>
+
+                                          <span class="special-offer__price">$18/mo</span>
+                                      </div>
+                                  </div>
+
+                                  <div class="col-lg-5">
+                                      <img src="assets/img/package/package.jpg" alt="people using phone" class="package-details__img">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="tab-pane fade" id="pills-900" role="tabpanel" aria-labelledby="pills-900-tab">
+                          <div class="package-details">
+                              <div class="row justify-content-between">
+                                  <div class="col-xl-6 col-lg-7">
+                                      <h5 class="package-details__title">Manage Current Plan</h5>
+                                      <p class="package-details__txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem fugit pariatur libero itaque, nisi minus doloremque sed iusto a earum?
+                                      </p>
+
+                                      <div class="package-details__features-container d-flex">
+                                          <div class="single-pack-feature">
+                                              <h6 class="single-pack-feature__title">800 Mbps is good for
+                                              </h6>
+                                              <ul class="single-pack-feature-list">
+                                                  <li>Up to 11 devices</li>
+                                                  <li>Fast downloads</li>
+                                                  <li>HD streaming</li>
+                                                  <li>Multiplayer gaming</li>
+                                              </ul>
+                                          </div>
+
+                                          <div class="single-pack-feature single-pack-feature--colored">
+                                              <h6 class="single-pack-feature__title">900 Mbps is good for
+                                              </h6>
+                                              <ul class="single-pack-feature-list">
+                                                  <li>Up to 11 devices</li>
+                                                  <li>Fast downloads</li>
+                                                  <li>HD streaming</li>
+                                                  <li>Multiplayer gaming</li>
+                                              </ul>
+                                          </div>
+                                      </div>
+
+                                      <div class="special-offer">
+                                          <img src="assets/img/feature-list/feature-list-vertical-2.png" alt="xFi" class="special-offer__img">
+                                          <div class="special-offer__info">
+                                              <span class="special-offer__title">Add an xFi Gateway at
+                                                  checkout</span>
+                                              <span class="special-offer__subtitle">Enjoy a powerful,
+                                                  secure
+                                                  connection.</span>
+                                          </div>
+
+                                          <span class="special-offer__price">$18/mo</span>
+                                      </div>
+                                  </div>
+
+                                  <div class="col-lg-5">
+                                      <img src="assets/img/package/package.jpg" alt="people using phone" class="package-details__img">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

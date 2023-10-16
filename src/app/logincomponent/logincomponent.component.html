@@ -1,0 +1,32 @@
+<!-- login.component.html -->
+<app-navbar></app-navbar>
+<div class="container1">
+    
+    <div class="center">
+        
+        <h2 >Login</h2>
+        <p class="glowing-text">Enter your phone number</p>
+  
+        <!-- <div class="input-field">
+            <input type="tel">
+            <i class="fas fa-envelope"></i>
+        </div>
+        
+        <div class="input-field">
+            <button class="nav-link" routerLink="/login/loginotp" routerLinkActive="active">Request OTP</button>
+            <a class="nav-links red-text center-text" routerLink="/loginemail" style=  "margin-top: 10px;font-size: 13px; font-family: 'Arial', sans-serif;">Login with Email</a>
+        </div> -->
+        
+        <div class="input-field">
+            <input type="tel" [(ngModel)]="phoneNumber">
+            <i  class="fas fa-phone-slash    "></i>
+        </div>
+        
+        <div class="input-field">
+            <button class="nav-link" (click)="requestOTP()">Request OTP</button>
+            <a class="nav-links red-text center-text" routerLink="/loginemail" style=  "margin-top: 10px;font-size: 13px; font-family: 'Arial', sans-serif;">Login with Email</a>
+        </div>
+        
+        <p style="font-size: 12px; margin-bottom: 10px; font-family: 'Arial', sans-serif;">Don't have an Account? <a class="nav-links " routerLink="/register" style="font-weight: bold; font-size: 14px;color: rgb(106, 106, 106);">Register</a></p>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<app-authnavbar></app-authnavbar> 
+<div class="backg">
+    <div class="sky">
+      <div class="stars"></div>
+      <div class="stars1"></div>
+      <div class="stars2"></div>
+      <div class="shooting-stars"></div>
+    </div>
+ 
+<div class="container">
+    <div class="printer-top"></div>
+  
+    <div class="paper-container">
+      <div class="printer-bottom"></div>
+  
+      <div class="paper">
+        <div class="main-contents">
+          <div class="success-icon">&#10003;</div>
+          <div class="success-title">
+            Payment Complete
+          </div>
+          <div class="success-description">
+            <div class="left-aligned">Phone Number:</div>
+            <div class="right-aligned">{{transactionDetails.phoneNumber}}</div><br>
+            <div class="left-aligned">Name:</div>
+            <div class="right-aligned">{{transactionDetails.firstName}} {{transactionDetails.lastName}}</div><br>
+            <div class="left-aligned">Date:</div>
+            <div class="right-aligned">{{transactionDetails.date}}</div><br>
+            <div class="left-aligned">Amount paid:</div>
+            <div class="right-aligned">{{transactionDetails.planPrice}}</div>
+          </div><br>
+          <div class="order-details">
+            <div class="order-number-label">Transaction ID</div>
+            <div class="order-number">{{transactionDetails.transactionId}}
+            </div>
+          </div>
+          <div class="order-footer">Thank you!</div>
+          <button (click)="generatePdf()" class="center-button">Download PDF</button>
+        </div>
+        <div class="jagged-edge"></div>
+      </div>
+    </div>
+  </div>
+</div>

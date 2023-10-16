@@ -1,0 +1,42 @@
+
+<div class="area"></div>
+<nav class="main-menu">
+  <ul>
+    <li>
+      <a routerLink="/myaccount/accountdetails" routerLinkActive="active" >
+        <i class="fa fa-user fa-2x"></i>
+        <span class="nav-text">
+          Account Details
+        </span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/myaccount/currentplan" routerLinkActive="active">
+        <i class="fa fa-credit-card fa-2x"></i>
+        <span class="nav-text">
+          Current Plan
+        </span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/status" routerLinkActive="active">
+        <i class="fa fa-check-circle fa-2x"></i>
+        <span class="nav-text">
+          Status
+        </span>
+      </a>
+    </li>
+  </ul>
+
+  <ul class="logout">
+    <li>
+      <a routerLink="/home" routerLinkActive="active">
+        <i class="fa fa-power-off fa-2x"></i>
+        <span class="nav-text">
+          Logout
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
