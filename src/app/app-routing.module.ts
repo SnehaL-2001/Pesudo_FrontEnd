@@ -8,11 +8,15 @@ import { LoginotpComponent } from './loginotp/loginotp.component';
 import { LoginemailComponent } from './loginemail/loginemail.component';
 import { AdminnavbarModule } from './adminnavbar/adminnavbar.module';
 import { NotificationComponent } from './authnavbar/notification/notification.component';
+import { ActivationComponent } from './activation/activation.component';
 
 const routes: Routes = [{
   path:'login',
   component:LogincomponentComponent
-},
+},{
+  path:'activate',
+  component:ActivationComponent
+  },
 {
   path:'register',
   component:RegisternewsimcomponentComponent

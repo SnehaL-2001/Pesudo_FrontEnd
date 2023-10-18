@@ -15,6 +15,10 @@ vertical-align: middle;
 font-size:20px;
 
 }
+.logout{
+  top:82vh;
+
+}
 .area{
     top:20;
 }
@@ -30,7 +34,7 @@ font-size:20px;
     position: absolute;
     top: 56px; /* Adjust this value as needed */
     bottom: 0;
-    height: auto;
+    height: 130vh;
     left: 0;
     width: 50px;
     overflow: hidden;

@@ -23,7 +23,11 @@ export class RegisternewsimcomponentComponent {
     location:'',
     loginPassword:'',
     phoneNumber:'',
-    status:'',
+    status:'inactive',
+    simNumber:'',
+    activationCode:'',
+    simStatus:'inactive',
+    wallet:0
    
   }; 
  
@@ -36,6 +40,8 @@ constructor(public eService:ServicesService){}
     // Call the sendMail function with both emailAddress and firstName
     this.eService.sendMail(emailAddress, firstName).subscribe((res) => {
       this.user.phoneNumber = res.phoneNumber
+      this.user.simNumber=res.simCardNumber
+      this.user.activationCode=res.activationCode
       console.log(res)
       console.log(res.phoneNumber)
       const result = this.eService.registerNewSim(this.user).subscribe();

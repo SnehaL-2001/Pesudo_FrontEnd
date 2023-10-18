@@ -17,6 +17,7 @@ import { LoginemailComponent } from './loginemail/loginemail.component';
 
 import { AdminnavbarModule } from './adminnavbar/adminnavbar.module';
 import { PlandetailsDirective } from './plandetails.directive';
+import { ActivationComponent } from './activation/activation.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { PlandetailsDirective } from './plandetails.directive';
     LoginotpComponent,
     LoginemailComponent,
     PlandetailsDirective,
+    ActivationComponent,
 
    
     

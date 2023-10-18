@@ -13,6 +13,8 @@ export class TransactionHistory {
     public planName: string,
     public planPrice: number,
     public transactionId:string,
-    public rechargedId:string
+    public rechargedId:string,
+    public wallet:number,
+    public paid:number
     ){} // Add the planPrice property
   }

@@ -9,6 +9,7 @@ import { CurrentplanComponent } from './currentplan/currentplan.component';
 import { PaymentComponent } from './payment/payment.component';
 import { PaymentgatewayComponent } from './paymentgateway/paymentgateway.component';
 import { PaymentstatusComponent } from './paymentstatus/paymentstatus.component';
+import { RechargehistoryComponent } from './rechargehistory/rechargehistory.component';
 
 
 const routes: Routes = [
@@ -36,7 +37,8 @@ const routes: Routes = [
     children: [
      
       { path: 'accountdetails', component: AccountdetailsComponent },
-      {path:'currentplan',component:CurrentplanComponent}
+      {path:'currentplan',component:CurrentplanComponent},
+      {  path:'rechargehistory',component:RechargehistoryComponent},
       // Add other routes for MyAccountNavBar options if needed
     ],
   },];

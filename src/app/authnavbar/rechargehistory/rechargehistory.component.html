@@ -1,0 +1,50 @@
+<app-authnavbar></app-authnavbar>
+<div class="container mt-3">
+    <h4 class="text mb-4" style="color: rgb(205, 4, 4);">TRANSACTION HISTORY</h4>
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>Plan Recharged ID</th>
+                    <th>Phone Number</th>
+                    <th>Date</th>
+                    <th>Invoice ID</th>
+                    <th>Next Payment Date</th>
+                    <th>Payment Method</th>
+                    <th>Payment Method ID</th>
+                    <th>Plan Name</th>
+                    <th>Plan Price</th>
+                    <th>Transaction ID</th>
+                    <th>Recharged ID</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let transaction of transactionHistory">
+                    <td>{{ transaction.planrechargedId }}</td>
+                    <td>{{ transaction.phoneNumber }}</td>
+                    <td>{{ transaction.date }}</td>
+                    <td>{{ transaction.invoiceID }}</td>
+                    <td>{{ transaction.nextPaymentDate }}</td>
+                    <td>{{ transaction.paymentMethod }}</td>
+                    <td>{{ transaction.paymentMethodId }}</td>
+                    <td>{{ transaction.planName }}</td>
+                    <td>{{ transaction.planPrice }}</td>
+                    <td>{{ transaction.transactionId }}</td>
+                    <td>{{ transaction.rechargedId }}</td>
+                    <td>
+                        <button class="btn btn-success" style="font-size: 12px; padding: 5px 10px;" (click)="downloadBill(transaction)">
+                            <i class="fa fa-download"></i> Download Bill
+                        </button>
+                        
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="download-invoice-button">
+        <button class="btn btn-sm" style="color: rgb(212, 212, 212); background-color: rgb(0, 1, 59);"(click)="downloadInvoice()">
+            <i class="fa fa-download"></i> Download Invoice
+        </button>
+    </div>
+</div>

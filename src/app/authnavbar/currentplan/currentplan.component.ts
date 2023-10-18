@@ -9,6 +9,8 @@ import { UserserviceService } from 'src/app/services/userservice.service';
   styleUrls: ['./currentplan.component.css']
 })
 export class CurrentplanComponent {
+  addingFunds: boolean = false;
+  fundAmount: number = 0;
   phoneNumber:any;
   emailAddress:any;
   transactionDetails:any;
@@ -32,6 +34,7 @@ constructor(private sessionservice:SessionService,private userService:Userservic
     this.nextDayDate = new Date(this.currentDateTime);
     this.nextDayDate.setDate(this.currentDateTime.getDate() + 1);
     this.nextDayDate.setHours(0, 0, 0, 0);
+    
 
     
     this.nextdayformat = datePipe.transform(this.nextDayDate, 'MMM dd, yyyy hh:mm a');
@@ -44,6 +47,7 @@ retrieveUserDetails() {
     this.userService.getUserDataByPhoneNumber(this.phoneNumber).subscribe(
       (userDetails) => {
         this.userDetails=userDetails;
+        console.log(userDetails);
         this.retrieveTransactionDetails();
       },
       (error) => {
@@ -53,7 +57,7 @@ retrieveUserDetails() {
     this.userService.getUserDataByEmail(this.emailAddress).subscribe(
       (userDetails) => {
         this.userDetails=userDetails;
-
+        console.log(userDetails);
         this.retrieveTransactionDetails();
       },
       (error) => {
@@ -107,5 +111,19 @@ retrievePlanDetails() {
     );
   }
 }
-
+addFunds() {
+  const email = this.userDetails.emailAddress; 
+  this.userDetails.wallet=this.userDetails.wallet+this.fundAmount;
+  console.log(this.userDetails);
+  this.userService.updateWalletBalance(email, this.userDetails).subscribe(response => {
+  
+    console.log('Wallet updated successfully:', response);
+   
+    this.fundAmount = 0;
+    this.addingFunds = false;
+  }, error => {
+    
+    console.error('Error updating wallet:', error);
+  });
+}
 }

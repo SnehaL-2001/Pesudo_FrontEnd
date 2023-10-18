@@ -26,7 +26,9 @@ export class PaymentgatewayComponent {
   planName:'',
   planPrice:0,
   transactionId:'',
-  rechargedId:''
+  rechargedId:'',
+  wallet:0,
+  paid:0
   };
   plantransactionHistory:TransactionHistory={
   planrechargedId:'',
@@ -42,9 +44,12 @@ export class PaymentgatewayComponent {
   planName:'',
   planPrice:0,
   transactionId:'',
-  rechargedId:''
+  rechargedId:'',
+  wallet:0,
+  paid:0
   };
   email:any;
+  useWalletBalance:boolean=false;
   planId: any;
   creditno:any;
   users: any;
@@ -205,9 +210,14 @@ console.log(this.plantransaction);
 
   
           this.servservice.updatestatus(this.phoneNumber).subscribe();
-          this.servservice.transactionrecharge(this.plantransaction).subscribe();
+          this.servservice.transactionrecharge(this.plantransaction).subscribe(() => {
+           
+            this.servservice.generateBill(this.plantransaction.emailAddress).subscribe((bill) => {
+              
+            });
+          });
           this.servservice.transactionrechargehistorysave(this.plantransaction).subscribe();
-          this.servservice.generateBill(this.plantransaction.emailAddress).subscribe();
+         
           this.router.navigate(["/paymentstatus",this.plantransaction.phoneNumber]);
   }
 }

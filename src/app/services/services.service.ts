@@ -37,7 +37,7 @@ export class ServicesService {
   
   sendMail(emailAddress: string, userName: string): Observable<any> {
     const body = { emailAddress, userName };
-    console.log(this.http.post('http://localhost:8034/sendmail', body))
+    console.log(this.http.post('http://localhost:8034/sendmail', body,{responseType:'json'}))
     return this.http.post('http://localhost:8034/sendmail', body);
   }
 

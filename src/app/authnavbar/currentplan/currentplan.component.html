@@ -1,46 +1,104 @@
 <app-authnavbar></app-authnavbar>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<div class="card-container" *ngIf="userDetails.status === 'active'">
-    <div class="custom-card">
-      <div class="card-body">
-        <h5 class="card-title"><p>{{planDetails.name}}</p><p style="color: rgb(205, 0, 0);">Rs {{planDetails.planPrice}}-{{planDetails.validity}}D-{{planDetails.data}}GB/D</p></h5>
-        <p class="card-text">Expires on {{transactionDetails.nextPaymentDate}}</p>
-        <div class="row">
-          <div class="col-sm-4">
-            <h6><i class="fas fa-database"></i> Data</h6>
-            <p>1023.81 MB left of {{planDetails.data}} GB</p>
-            <p>*Renews on {{formattedDate}}</p>
-          </div>
-          <div class="col-sm-4">
-            <h6><i class="fas fa-comment"></i> SMS</h6>
-            <p> {{planDetails.messagesPerDay}} SMS</p>
-            <p>*Renews on {{nextdayformat}} </p>
-          </div>
-          <div class="col-sm-4">
-            <h6><i class="fas fa-phone"></i> Voice</h6>
-            <p>{{planDetails.calling}}</p>
+
+<div class="container">
+  <!-- Plan Details (12 columns) -->
+  <div class="row">
+    <div class="col-md-12"  *ngIf="userDetails.status === 'active'">
+      <div class="custom-card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">
+            <p>{{planDetails.name}}</p>
+            <p style="color: rgb(205, 0, 0);">Rs {{planDetails.planPrice}}-{{planDetails.validity}}D-{{planDetails.data}}GB/D</p>
+          </h5>
+          <p class="card-text">Expires on {{transactionDetails.nextPaymentDate}}</p>
+          <div class="row">
+            <div class="col-sm-4">
+              <h6><i class="fas fa-database"></i> Data</h6>
+              <p>1023.81 MB left of {{planDetails.data}} GB</p>
+              <p>*Renews on {{formattedDate}}</p>
+            </div>
+            <div class="col-sm-4">
+              <h6><i class="fas fa-comment"></i> SMS</h6>
+              <p> {{planDetails.messagesPerDay}} SMS</p>
+              <p>*Renews on {{nextdayformat}} </p>
+            </div>
+            <div class="col-sm-4">
+              <h6><i class="fas fa-phone"></i> Voice</h6>
+              <p>{{planDetails.calling}}</p>
+            </div>
           </div>
         </div>
-        <!-- <a href="#" class="btn btn-primary">Subscribe Now</a> -->
       </div>
     </div>
   </div>
-  <div  class="card-container" *ngIf="userDetails.status !== 'active'">
-    <div class="custom-card">
-   
-       
-          <div class="card-header">
-            <h5 class="card-title"> No Active Pack</h5>  
-          </div>
-          <div class="card-body"><br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" *ngIf="userDetails.status !== 'active'">
+        <div class="custom-card mb-4">
+          
+          <div class="card-body">
+            <h5 class="card-title"> <p>No Active Pack</p></h5>  
             <h5 class="card-text">₹0.00</h5>
             <p class="card-text">Main Balance</p>
             <p class="card-text">Pack validity expired</p>
             <p class="card-text">Incoming & outgoing services barred</p>
             <a routerLink="/browseplans" class="btn btn-primary">Recharge Now</a>
           </div>
-       
+        </div>
       </div>
     </div>
- 
-  
+  </div>
+<br>
+<br>
+  <!-- Wallet card (5 columns) --><div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <div class="custom-card mb-4">
+        <div class="card-body"><div class="row">
+          <div class="col-sm-4">   <h4 class="card-title">Wallet</h4></div>
+          <div class="col-sm-7">  </div>
+          <div class="col-sm-1"> <div class="wallet" id="wallet">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="22" height="22" viewBox="0 0 350 350" fill="currentColor">
+                <path d="M336.7 344c-22 0-39.9-18-39.9-39.9V238c0-22 18-39.8 39.9-39.8h105.7v-65.9c0-17-13.8-30.7-30.7-30.7h-381c-17 0-30.7 13.7-30.7 30.7v277.6c0 17 13.8 30.8 30.7 30.8h381c17 0 30.7-13.8 30.7-30.8V344H336.7z" />
+                <path d="M440.5 220H336.7c-10 0-18 8-18 18V304c0 10 8 18 18 18h103.8c10 0 18-8 18-18V238c0-10-8-18-18-18zm-68 77a26 26 0 1 1 0-52 26 26 0 0 1 0 52zM358.2 45.2A39.7 39.7 0 0 0 308 20L152 71.6h214.9l-8.7-26.4z" />
+              </svg>
+            </div>
+            <div class="coin coin--animated" style="--coin-to-x: calc(-100px + 24px); --coin-to-y: calc(-105px + 24px); --coin-delay: 0.3s;"></div>
+            <div class="coin coin--animated" style="--coin-to-x: calc(-70px + 24px); --coin-to-y: -90px; --coin-delay: 0.1s;"></div>
+            <div class="coin coin--animated" style="--coin-to-x: calc(-30px + 24px); --coin-to-y: -125px; --coin-delay: 0s;"></div>
+            <div class="coin coin--animated" style="--coin-to-x: calc(10px + 24px); --coin-to-y: -130px; --coin-delay: 0.2s;"></div>
+            <div class="coin coin--animated" style="--coin-to-x: calc(30px + 24px); --coin-to-y: -100px; --coin-delay: 0.1s;"></div>
+            <div class="coin coin--animated" style="--coin-to-x: calc(70px + 24px); --coin-to-y: -95px; --coin-delay: 0.4s;"></div>
+            <div class="coin coin--animated" style="--coin-to-x: calc(100px + 24px); --coin-to-y: -100px; --coin-delay: 0.2s;"></div>
+          </div></div>
+          <p class="card-text">Wallet Balance</p>
+          <h5 class="card-text">{{userDetails.wallet}}</h5>
+          <a class="btn btn-primary" *ngIf="!addingFunds" (click)="addingFunds = true">Add Wallet</a>
+
+  <div *ngIf="addingFunds">
+    <input type="number" [(ngModel)]="fundAmount" placeholder="Enter amount">
+    <button class="btn btn-primary" (click)="addFunds()">Add</button>
+  </div>
+        </div>
+          <!-- Add content for wallet card here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Services card (7 columns) -->
+    <div class="col-md-6" *ngIf="userDetails.status === 'active'">
+      <div class="custom-card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Current Services</h5>
+         
+          <ul>
+            <li class="card-text" *ngFor="let feature of planDetails.features">{{ feature }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

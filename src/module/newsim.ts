@@ -7,6 +7,10 @@ export class Newsim{
         public location:string,
         public loginPassword:string,
         public phoneNumber:string,
-        public status:string
+        public status:string,
+        public simNumber:string,
+        public activationCode :string,
+        public simStatus:string,
+        public wallet:number,
         ){}
 }

@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { PaymentgatewayComponent } from './paymentgateway/paymentgateway.component';
 import { PlanPipe } from './plan.pipe';
 import { PaymentstatusComponent } from './paymentstatus/paymentstatus.component';
+import { RechargehistoryComponent } from './rechargehistory/rechargehistory.component';
 
 
 
@@ -34,7 +35,8 @@ import { PaymentstatusComponent } from './paymentstatus/paymentstatus.component'
   PaymentComponent,
   PaymentgatewayComponent,
   PlanPipe,
-  PaymentstatusComponent
+  PaymentstatusComponent,
+  RechargehistoryComponent
 
   ],
   imports: [

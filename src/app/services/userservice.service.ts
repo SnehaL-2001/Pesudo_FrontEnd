@@ -1,14 +1,38 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Newsim } from 'src/module/newsim';
 import { Plan } from 'src/module/plan';
+import { TransactionHistory } from 'src/module/transactionHistory';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserserviceService {
-  getPlanDetailsByName(planName: string): Observable<any> {
+  updateWalletBalance(email: string, userDetails: any): Observable<any> {
+    const url = `http://localhost:8034/update-wallet/${email}`;
+    return this.http.put(url, userDetails);
+  }
+  activatesim(code: string): Observable<any> {
+    const body = { "code": code };
+    console.log(this.http.post('http://localhost:8034/activate-sim', body));
+    return this.http.post('http://localhost:8034/activate-sim', body);
+  }
+
+  getUserDetailsByCode(code: string): Observable<any> {
+    
+    return this.http.get(`http://localhost:8034/activate?code=${code}`);
+  }
+  getTransactionHistoryByEmail(emailAddress: string): Observable<TransactionHistory[]> {
+    const url = `http://localhost:8036/getTransactionHistoryByEmailAddress?emailAddress=${emailAddress}`;
+    return this.http.get<TransactionHistory[]>(url);
+  }
+
+  getTransactionHistoryByPhoneNumber(phoneNumber: string): Observable<TransactionHistory[]> {
+    const url = `http://localhost:8036/getTransactionHistoryByPhoneNumber?phoneNumber=${phoneNumber}`;
+    return this.http.get<TransactionHistory[]>(url);
+  }
+    getPlanDetailsByName(planName: string): Observable<any> {
     console.log(planName);
     const url = `http://localhost:8036/getplansbyname/${planName}`;
     return this.http.get(url);
