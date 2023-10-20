@@ -15,9 +15,10 @@ export class ServicesService {
     // console.log(plantransaction);
     return this.http.post('http://localhost:8036/transactionssave', plantransaction);
   }
-  generateBill(emailAddress: string): Observable<any> {
+  generateBill(emailAddress: string): Observable<Map<string, string>> {
     console.log(emailAddress);
-    return this.http.post('http://localhost:8036/generate-bill', emailAddress );
+    console.log(this.http.post('http://localhost:8036/generate-bill', emailAddress ))
+    return this.http.post<Map<string, string>>('http://localhost:8036/generate-bill', emailAddress );
   }
   transactionrecharge(plantransaction: Transaction):Observable<any> {
     // console.log(plantransaction);
@@ -50,7 +51,7 @@ export class ServicesService {
   validateOTP(mobile: string, otp: string): Observable<boolean> {
    
       
-      return this.http.post<boolean>('http://localhost:8035/validate-otp', { mobile, otp });
+      return this.http.post<boolean>('http://localhost:8034/validate-otp', { mobile, otp });
     
   }
   constructor(private http: HttpClient) {}
@@ -58,7 +59,7 @@ export class ServicesService {
   requestOTP(phoneNumber: string) {
     const body = { phoneNumber };
     console.log(body);
-    return this.http.post('http://localhost:8035/requestotp', body);
+    return this.http.post('http://localhost:8034/requestotp', body);
   }
  
   

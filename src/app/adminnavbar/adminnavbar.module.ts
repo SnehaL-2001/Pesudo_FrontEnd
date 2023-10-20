@@ -11,6 +11,7 @@ import { HomeadminComponent } from './homeadmin/homeadmin.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DataTablesModule } from 'angular-datatables';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    AdminnavbarRoutingModule,ReactiveFormsModule,FormsModule
+    AdminnavbarRoutingModule,ReactiveFormsModule,FormsModule,DataTablesModule
   ],exports:[AdminnavbarRoutingModule,AdminnavbarComponent]
 })
 export class AdminnavbarModule { }

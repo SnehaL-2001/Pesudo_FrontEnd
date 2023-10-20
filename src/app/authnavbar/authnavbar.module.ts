@@ -17,6 +17,7 @@ import { PaymentgatewayComponent } from './paymentgateway/paymentgateway.compone
 import { PlanPipe } from './plan.pipe';
 import { PaymentstatusComponent } from './paymentstatus/paymentstatus.component';
 import { RechargehistoryComponent } from './rechargehistory/rechargehistory.component';
+import { DataTablesModule } from 'angular-datatables';
 
 
 
@@ -41,7 +42,7 @@ import { RechargehistoryComponent } from './rechargehistory/rechargehistory.comp
   ],
   imports: [
     CommonModule,
-    AuthnavbarRoutingModule,FormsModule
+    AuthnavbarRoutingModule,FormsModule,DataTablesModule
 
   ], exports:[AuthnavbarRoutingModule,AuthnavbarComponent,MyaccountComponent],
 })

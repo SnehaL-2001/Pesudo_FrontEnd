@@ -839,3 +839,46 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
         display: none;
     }
 }
+.internet-section{
+	position:relative;
+	overflow:hidden;
+	padding:110px 0px 110px;
+	background-size:cover;
+	background-attachment:fixed;
+}
+
+.internet-section:before{
+	position:absolute;
+	content:'';
+	right:0px;
+	top:0px;
+	width:50%;
+	height:100%;
+	z-index:1;
+	background: rgba(255,255,255,0);
+	background: -webkit-linear-gradient(to right, rgba(255,255,255,0) 0%, #FDF6F6 100%);
+	background: -moz-linear-gradient(to right, rgba(255,255,255,0) 0%, #FDF6F6 100%);
+	background: linear-gradient(to right, rgba(255,255,255,0) 0%, #FDF6F6 100%);
+}
+
+.internet-section .content-column{
+	position:relative;
+	max-width:550px;
+	width:100%;
+	float:right;
+	z-index:10;
+}
+
+.internet-section .content-column .text{
+	margin-top:var(--margin-top-15);
+	margin-bottom:var(--margin-bottom-25);
+}
+
+.internet-section .content-column .price{
+	position:relative;
+	font-weight:600;
+	color:var(--main-color);
+	font-size:var(--font-22);
+	margin-top:var(--margin-top-15);
+	margin-bottom:var(--margin-bottom-40);
+}

@@ -37,7 +37,7 @@ constructor(public eService:ServicesService){}
     console.log(this.user);
     const { emailAddress, firstName } = this.user;
     
-    // Call the sendMail function with both emailAddress and firstName
+  
     this.eService.sendMail(emailAddress, firstName).subscribe((res) => {
       this.user.phoneNumber = res.phoneNumber
       this.user.simNumber=res.simCardNumber

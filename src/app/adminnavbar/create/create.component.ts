@@ -11,7 +11,7 @@ import { Plan } from 'src/module/plan';
 })
 export class CreateComponent {
   categoryOptions: string[] = ['Monthly Basic Plan', 'Monthly Premium Plan', 'Yearly Basic Plan', 'Yearly Premium Plan'];
-  featureOptions: string[] = ['Hotstar', 'Netflix', 'Spotify', 'Extra 10GB Data', 'Extra 20GB Data'];
+  featureOptions: string[] = ['Hotstar', 'Netflix', 'Spotify', 'Extra 10GB Data', 'Extra 20GB Data','Amazon Prime','Zee5'];
   selectedFeatures: string[] = [];
 
   plan: Plan = {

@@ -27,7 +27,7 @@ export class EditComponent {
   
   editForm: FormGroup;
 
-  featureOptions: string[] = ['Hotstar', 'Netflix', 'Spotify', 'Extra 10GB Data', 'Extra 20GB Data'];// Define featureOptions here
+  featureOptions: string[] = ['Hotstar', 'Netflix', 'Spotify', 'Extra 10GB Data', 'Extra 20GB Data','Amazon Prime','Zee5'];// Define featureOptions here
 
   constructor(private sessionservice: SessionService, private adminservice: AdminService, private planservice: PlanserviceService, private route: ActivatedRoute, private router: Router, private fb: FormBuilder) {
     this.planId = this.route.snapshot.params['id'];

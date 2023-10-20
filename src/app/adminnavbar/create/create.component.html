@@ -1,5 +1,6 @@
 <app-adminnavbar></app-adminnavbar>
-<form (ngSubmit)="onSubmit()" #planForm="ngForm">
+<div class="container">
+  <form (ngSubmit)="onSubmit()" #planForm="ngForm" class="my-5">
     <div class="form-group">
       <label for="name">Plan Name:</label>
       <input type="text" id="name" name="name" [(ngModel)]="plan.name" required class="form-control">
@@ -29,7 +30,7 @@
       <label for="validity">Validity (days):</label>
       <input type="number" id="validity" name="validity" [(ngModel)]="plan.validity" required class="form-control">
     </div>
-    
+
     <div class="form-group">
       <label>Features:</label>
       <div class="form-check" *ngFor="let feature of featureOptions; let i = index">
@@ -37,15 +38,14 @@
         <label class="form-check-label">{{ feature }}</label>
       </div>
     </div>
-    
-    
+
     <div class="form-group">
       <label for="category">Category:</label>
       <select id="category" name="category" [(ngModel)]="plan.category" required class="form-control">
         <option *ngFor="let option of categoryOptions" [value]="option">{{ option }}</option>
       </select>
     </div>
-  
+
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
-  
+</div>

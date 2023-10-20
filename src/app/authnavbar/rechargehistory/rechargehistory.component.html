@@ -2,7 +2,7 @@
 <div class="container mt-3">
     <h4 class="text mb-4" style="color: rgb(205, 4, 4);">TRANSACTION HISTORY</h4>
     <div class="table-responsive">
-        <table>
+        <table  datatable [dtOptions]="dtoptions" *ngIf="transactionHistory.length>0">
             <thead>
                 <tr>
                     <th>Plan Recharged ID</th>

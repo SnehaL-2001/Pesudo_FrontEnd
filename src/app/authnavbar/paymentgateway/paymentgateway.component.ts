@@ -48,27 +48,34 @@ export class PaymentgatewayComponent {
   wallet:0,
   paid:0
   };
-  email:any;
-  useWalletBalance:boolean=false;
+  email: any;
+  message:any;
+  useWalletBalance: boolean = false;
   planId: any;
-  creditno:any;
+  creditno: any;
   users: any;
   currentTime: Date;
   plandetail: any;
-  paymentMethod: string = 'creditCard'; 
+  paymentMethod: string = 'creditCard';
   mobilePaymentDetails: { upiId: string, phoneNumber: string } = { upiId: '', phoneNumber: '' };
-  paymentMobileField: string = 'upiId'; 
+  paymentMobileField: string = 'upiId';
   invoiceID: any;
-  phoneNumber:any;
-  nextPaymentDate: Date = new Date(); 
-  mobile:any;
-  emailAddress:any;
-  paymentMethodId:any;
-  upiId:any;
+  phoneNumber: any;
+  nextPaymentDate: Date = new Date();
+  mobile: any;
+  emailAddress: any;
+  paymentMethodId: any;
+  upiId: any;
+  initialWalletBalance: number = 0;
+  totalWithWallet: number = 0;
+   usedWallet:number=0;
+   remainingWallet:number=0;
+   isWalletSufficient: boolean = false;
 
   constructor(private eservice: AdminService, private route: ActivatedRoute,private router:Router,private userService:UserserviceService,private servservice:ServicesService) {
     this.currentTime = new Date();
     this.generateRandomInvoiceID();
+    this.updatePaymentMethod();
     console.log(this.paymentMethod)
    
   }
@@ -80,7 +87,22 @@ export class PaymentgatewayComponent {
       console.log('Credit Card Number:', this.creditno);
     }
   }
-
+  updatePaymentMethod() {
+    if (this.useWalletBalance) {
+      if (this.initialWalletBalance >= this.plandetail.planPrice) {
+        this.paymentMethod = 'wallet';
+      } else {
+        if (this.paymentMethod === 'creditCard') {
+          this.paymentMethod = 'creditCard,wallet';
+        } else if (this.paymentMethod === 'mobilePayment') {
+          this.paymentMethod = 'mobilePayment,wallet';
+        }
+      }
+    } else {
+      this.paymentMethod = this.paymentMethod; 
+    }
+  }
+  
   switchMobilePaymentField(field: string) {
     this.paymentMobileField = field;
   }
@@ -117,6 +139,7 @@ export class PaymentgatewayComponent {
   }
 
   ngOnInit() {
+    this.remainingWallet = this.initialWalletBalance;
     this.route.params.subscribe((params) => {
       this.planId = params['id'];
       this.phoneNumber=params['mobile'];
@@ -139,33 +162,41 @@ export class PaymentgatewayComponent {
 
     // Determine whether the user logged in with email or phone number
     if (this.email) {
-      
       this.userService.getUserDataByEmail(this.email).subscribe((data) => {
-        
-          this.users=data;
-          console.log(this.users);
-          this.emailAddress = this.users.emailAddress; 
-        },
-        (error) => {
-         
-          // console.error(error);
-        }
-      );
+        this.users = data;
+        this.initialWalletBalance = this.users.wallet;
+        this.updateTotalPrice();
+      });
     } else if (this.mobile) {
-      // User logged in with phone number, fetch user data by phone number
       this.userService.getUserDataByPhoneNumber(this.mobile).subscribe((data) => {
         this.users = data;
-        console.log(this.users);
-        console.log(this.currentTime, this.invoiceID,this.nextPaymentDate,this.phoneNumber,this.users.emailAddress,this.plandetail.name,this.plandetail.planPrice,this.paymentMethod,this.creditno)
-      
-       
+        this.initialWalletBalance = this.users.wallet;
+        this.updateTotalPrice();
       });
     }
-    // this.emailAddress=this.users.emailAddress;
-   
   }
+ 
+  updateTotalPrice() {
+    const usedWallet = this.useWalletBalance ? Math.min(this.initialWalletBalance, this.plandetail.planPrice) : 0;
+    this.usedWallet = usedWallet; // Store the used wallet amount
+    this.remainingWallet = this.initialWalletBalance - usedWallet;
+    console.log(this.remainingWallet);
+    this.plantransaction.wallet = usedWallet;
+    this.plantransaction.paid = this.plandetail.planPrice - usedWallet;
+    if (this.plantransaction.paid < 0) {
+      this.plantransaction.paid = 0;
+    }
+    this.totalWithWallet = this.plantransaction.paid;
+    console.log('Used Wallet Amount:', usedWallet);
+    console.log('Remaining Wallet Balance:', this.remainingWallet);
+    console.log('Paid Amount:', this.plantransaction.paid);
+    
+    
+    this.isWalletSufficient = usedWallet >= this.plandetail.planPrice;
+  }
+  
   generateRandomTransactionId(): string {
-    // Generate a random alphanumeric transaction ID with 20 characters
+    
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     const transactionId = 'TR-' + Array.from({ length: 22 }, () => characters.charAt(Math.floor(Math.random() * characters.length))).join('');
     return transactionId;
@@ -183,14 +214,16 @@ export class PaymentgatewayComponent {
   
   saveTransaction() {
     if (this.paymentMethod === 'creditCard' && this.creditno) {
-      // Credit card payment with a valid credit card number
+      
       this.paymentMethodId = this.creditno; }
       else{
       if (this.paymentMethod === 'mobilePayment' && this.upiId) {
-          // Mobile payment with a valid UPI ID
+          
           this.paymentMethodId = this.upiId;
       }
     }
+    this.updatePaymentMethod();
+
     this.plantransaction.phoneNumber=this.phoneNumber
     this.plantransaction.firstName=this.users.firstName
     this.plantransaction.lastName=this.users.lastName
@@ -206,18 +239,42 @@ this.plantransaction.transactionId=this.generateRandomTransactionId();
 this.plantransaction.rechargedId=this.generateUniqueRechargedId();
 
 
-console.log(this.plantransaction);
 
+console.log(this.plantransaction);
+          this.users.wallet=this.remainingWallet;
+          console.log(this.users)
   
           this.servservice.updatestatus(this.phoneNumber).subscribe();
-          this.servservice.transactionrecharge(this.plantransaction).subscribe(() => {
+          this.userService.updateWalletBalance(this.users.emailAddress, this.users).subscribe();
+                    this.servservice.transactionrecharge(this.plantransaction).subscribe(() => {
            
-            this.servservice.generateBill(this.plantransaction.emailAddress).subscribe((bill) => {
-              
-            });
-          });
+                      this.servservice.generateBill(this.plantransaction.emailAddress).subscribe((response: Map<string, string>) => {
+                        console.log('Response:', response);
+                         this.message = response.get('message');
+                    
+                        if (this.message.includes('successfully')) {
+                          Swal.fire({
+                            icon: 'success',
+                            title: 'Success',
+                            text: this.message,
+                          });
+                        } else {
+                          Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: this.message,
+                          });
+                        }
+                    
+                        // Handle the response message and navigate to the desired route if needed
+                        if (this.message.includes('successfully')) {
+                          this.router.navigate(["/paymentstatus", this.plantransaction.phoneNumber]);
+                        }
+                    });
+                      
           this.servservice.transactionrechargehistorysave(this.plantransaction).subscribe();
          
-          this.router.navigate(["/paymentstatus",this.plantransaction.phoneNumber]);
-  }
+           this.router.navigate(["/paymentstatus",this.plantransaction.phoneNumber]);
+  })
+}
 }

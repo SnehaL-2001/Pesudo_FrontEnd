@@ -1,3 +1,47 @@
 <app-adminnavbar></app-adminnavbar>
 
-<p>recharges works!</p>
+<div class="container">
+    <table datatable [dtOptions]="dtOptions" class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Plan Recharged ID</th>
+          <th>Phone Number</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Date</th>
+          <th>Invoice ID</th>
+          <th>Next Payment Date</th>
+          <th>Email Address</th>
+          <th>Payment Method</th>
+          <th>Payment Method ID</th>
+          <th>Plan Name</th>
+          <th>Plan Price</th>
+          <th>Transaction ID</th>
+          <th>Recharged ID</th>
+          <th>Wallet</th>
+          <th>Paid</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let plan of plans">
+          <td>{{ plan.planrechargedId }}</td>
+          <td>{{ plan.phoneNumber }}</td>
+          <td>{{ plan.firstName }}</td>
+          <td>{{ plan.lastName }}</td>
+          <td>{{ plan.date }}</td>
+          <td>{{ plan.invoiceID }}</td>
+          <td>{{ plan.nextPaymentDate }}</td>
+          <td>{{ plan.emailAddress }}</td>
+          <td>{{ plan.paymentMethod }}</td>
+          <td>{{ plan.paymentMethodId }}</td>
+          <td>{{ plan.planName }}</td>
+          <td>{{ plan.planPrice }}</td>
+          <td>{{ plan.transactionId }}</td>
+          <td>{{ plan.rechargedId }}</td>
+          <td>{{ plan.wallet }}</td>
+          <td>{{ plan.paid }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -2,11 +2,16 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Plan } from 'src/module/plan';
+import { Transaction } from 'src/module/transaction';
+import { TransactionHistory } from 'src/module/transactionHistory';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminService {
+  getRechargedetails():Observable<TransactionHistory[]> {
+    return this.http.get<TransactionHistory[]>(`http://localhost:8036/allTransaction`);
+  }
   getAllUsers(): Observable<Plan[]> {
     
     return this.http.get<Plan[]>(`http://localhost:8034/allusers`);

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { UserserviceService } from 'src/app/services/userservice.service';
 import { TransactionHistory } from 'src/module/transactionHistory';
+import { DataTableDirective } from 'angular-datatables';
+
 import jsPDF from 'jspdf';
 @Component({
   selector: 'app-rechargehistory',
@@ -9,8 +11,25 @@ import jsPDF from 'jspdf';
 })
 export class RechargehistoryComponent {
   transactionHistory: TransactionHistory[] = [];  constructor(private userservice: UserserviceService) { }
+  dtoptions: DataTables.Settings = {};
 
   ngOnInit(): void {
+    this.dtoptions = {
+
+      pagingType: 'full_numbers',
+
+      searching: true,
+
+      lengthChange: false,
+
+      language: {
+
+        searchPlaceholder: 'Search Here'
+
+      }
+
+    };
+
     const email = sessionStorage.getItem('emailAddress');
     const phoneNumber = sessionStorage.getItem('phoneNumber');
 
@@ -60,7 +79,7 @@ export class RechargehistoryComponent {
     doc.text(`Phone: ${transaction.phoneNumber}`, 20, 80);
 
     doc.setFontSize(14);
-    doc.text('Recharge Details:', 20, 90);
+    doc.text('Recharge Details:', 20, 100);
 
     doc.setFontSize(12);
     doc.text(`Transaction ID: ${transaction.transactionId}`, 20, 110);
@@ -69,10 +88,11 @@ export class RechargehistoryComponent {
     doc.text(`Recharge Amount: $${transaction.planPrice.toFixed(2)}`, 20, 140);
     doc.text(`Payment Method: ${transaction.paymentMethod}`, 20, 150);
     doc.text(`Payment Method ID: ${transaction.paymentMethodId}`, 20, 160);
-    doc.text(`Next Payment On: ${transaction.nextPaymentDate}`, 20, 170);
-
+    doc.text(`Wallet Used: ${transaction.wallet}`, 20, 170);
+    doc.text(`Next Payment On: ${transaction.nextPaymentDate}`, 20, 180);
+   
     doc.setFontSize(14);
-    doc.text(`Total Amount: $${transaction.planPrice.toFixed(2)}`, 190, 190, { align: 'right' });
+    doc.text(`Total Amount: $${transaction.paid.toFixed(2)}`, 190, 190, { align: 'right' });
 
     const pdfData = doc.output('blob');
     const pdfUrl = URL.createObjectURL(pdfData);
@@ -121,6 +141,10 @@ export class RechargehistoryComponent {
       doc.text(`Payment Method: ${transaction.paymentMethod}`, cardX + 5, cardY + 9 * lineHeight);
       doc.text(`Payment Method ID: ${transaction.paymentMethodId}`, cardX + 5, cardY + 10 * lineHeight);
       doc.text(`Next Payment On: ${transaction.nextPaymentDate.toLocaleString()}`, cardX + 5, cardY + 11 * lineHeight);
+      doc.text(`Wallet Used: ${transaction.wallet}`, cardX + 5, cardY + 12 * lineHeight);     
+       doc.text(`Amount Paid On: ${transaction.paid}`, cardX + 5, cardY + 13 * lineHeight);
+
+
     });
 
     const pdfData = doc.output('blob');

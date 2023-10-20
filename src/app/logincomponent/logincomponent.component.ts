@@ -16,7 +16,7 @@ export class LogincomponentComponent {
   constructor(public service:AuthserviceService,private eService:ServicesService,private router:Router){}
   requestOTP() {
     if (this.phoneNumber === '9876543210') {
-      // If the phone number is "9876543210", directly navigate to the OTP page
+      
       console.log("enter otp page")
       this.eService.mobile = this.phoneNumber;
       console.log(this.eService.mobile);
@@ -24,14 +24,14 @@ export class LogincomponentComponent {
     } else if (this.phoneNumber) {
       this.eService.requestOTP(this.phoneNumber).subscribe(
         (response:any) => {
-          // Handle success (e.g., display a message)
+         
           console.log('OTP Requested Successfully', response);
           this.eService.mobile = this.phoneNumber;
           this.router.navigate(['/login/loginotp']);
 
         },
         (error) => {
-          // Handle error (e.g., display an error message)
+        
           console.error('Failed to request OTP', error);
         }
       );
