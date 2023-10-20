@@ -18,7 +18,7 @@ export class LoginemailComponent {
 
   login() {
     console.log(this.emailAddress,this.loginPassword)
-    if (this.emailAddress === 'admin@gmail.com') {
+    if (this.emailAddress === 'admin@prodapt.com') {
       if (this.loginPassword === 'Reset@123') {
         this.service.isAdminLogin = true;
         this.router.navigate(['/adminhome']);
